@@ -18,9 +18,23 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
+    path('', include('core.urls')), 
     path('admin/', admin.site.urls),
-    path('accounts/', include('accounts.urls')),  # Les vues comptes
-    path('auth/', include('django.contrib.auth.urls')),  # vues Django intégrées (login/logout)
+    path('compte/', include('accounts.urls')),
+    path('reservations/', include('reservations.urls')),
+    path('menu/', include('menu.urls')),
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
+# from django.views.i18n import set_language
+
+# urlpatterns += [
+#     path('set_language/', set_language, name='set_language'),
+# ]
+

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Notre Menu</h2>
+
+{% for cat in categories %}
+  <h3>{{ cat.nom }}</h3>
+  <ul>
+    {% for plat in cat.plat_set.all %}
+      {% if plat.disponible %}
+        <li>
+          <strong>{{ plat.nom }}</strong> – {{ plat.prix }} €
+          <br>
+          <em>{{ plat.description }}</em>
+          {% if plat.image %}
+            <br><img src="{{ plat.image.url }}" alt="{{ plat.nom }}" width="200">
+          {% endif %}
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+{% endfor %}
+{% endblock %}

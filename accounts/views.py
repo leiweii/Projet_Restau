@@ -1,33 +1,35 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from .models import Profile
-from django.contrib import messages
-from .forms import ProfileForm
+from .forms import UserRegistrationForm, ProfileUpdateForm
 
-def signup_view(request):
+def register_view(request):
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form = UserRegistrationForm(request.POST)
         if form.is_valid():
-            user = form.save()
-            return redirect('login')
+            user = form.save(commit=False)
+            user.set_password(form.cleaned_data['password'])
+            user.save()
+            login(request, user)
+            return redirect('profile')
     else:
-        form = UserCreationForm()
-    return render(request, 'accounts/signup.html', {'form': form})
+        form = UserRegistrationForm()
+    return render(request, 'accounts/register.html', {'form': form})
+
 
 @login_required
 def profile_view(request):
-    return render(request, 'accounts/profile.html', {'user': request.user})
+    return render(request, 'accounts/profile.html')
+
 
 @login_required
-def edit_profile_view(request):
+def profile_update_view(request):
     profile = request.user.profile
     if request.method == 'POST':
-        form = ProfileForm(request.POST, instance=profile)
+        form = ProfileUpdateForm(request.POST, instance=profile)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Profil mis à jour avec succès.')
             return redirect('profile')
     else:
-        form = ProfileForm(instance=profile)
-    return render(request, 'accounts/edit_profile.html', {'form': form})
+        form = ProfileUpdateForm(instance=profile)
+    return render(request, 'accounts/profile_edit.html', {'form': form})

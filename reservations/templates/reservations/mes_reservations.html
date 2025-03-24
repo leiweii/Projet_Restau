@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Mes réservations</h2>
+<ul>
+  {% for r in reservations %}
+    <li>
+      📅 {{ r.date }} à {{ r.heure }} – {{ r.nombre_personnes }} personnes
+      <br>☎️ {{ r.telephone }} – ✉️ {{ r.email }}
+    </li>
+  {% empty %}
+    <li>Aucune réservation trouvée.</li>
+  {% endfor %}
+</ul>
+{% endblock %}
