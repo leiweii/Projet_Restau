@@ -1,0 +1,16 @@
+# Environnement virtuel
+env/
+
+# Fichiers compilés
+__pycache__/
+*.pyc
+
+# Base de données SQLite
+db.sqlite3
+
+# Fichiers statiques et médias
+/static/
+/media/
+
+# Fichiers de l’IDE (ex: VS Code)
+.vscode/
