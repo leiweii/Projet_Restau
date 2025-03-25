@@ -1,22 +1,65 @@
 {% extends 'base.html' %}
+{% block title %}Menu{% endblock %}
 {% block content %}
-<h2>Notre Menu</h2>
 
-{% for cat in categories %}
-  <h3>{{ cat.nom }}</h3>
-  <ul>
-    {% for plat in cat.plat_set.all %}
-      {% if plat.disponible %}
-        <li>
-          <strong>{{ plat.nom }}</strong> – {{ plat.prix }} €
-          <br>
-          <em>{{ plat.description }}</em>
-          {% if plat.image %}
-            <br><img src="{{ plat.image.url }}" alt="{{ plat.nom }}" width="200">
-          {% endif %}
-        </li>
-      {% endif %}
-    {% endfor %}
-  </ul>
-{% endfor %}
+<h2 class="mb-4 text-center">🍽️ Notre Menu</h2>
+
+<!-- Barre de recherche et filtres -->
+<form method="get" class="row mb-4">
+  <div class="col-md-4">
+    <input type="text" name="recherche" value="{{ recherche }}" placeholder="Rechercher un plat..." class="form-control">
+  </div>
+  <div class="col-md-4">
+    <select name="prix" class="form-select">
+      <option value="">Trier par prix</option>
+      <option value="asc" {% if tri_prix == 'asc' %}selected{% endif %}>Prix croissant</option>
+      <option value="desc" {% if tri_prix == 'desc' %}selected{% endif %}>Prix décroissant</option>
+    </select>
+  </div>
+  <div class="col-md-4">
+    {% if categorie_id and categorie_id != 'all' %}
+      <input type="hidden" name="categorie" value="{{ categorie_id }}">
+    {% endif %}
+    <button type="submit" class="btn btn-primary w-100">🔎 Rechercher</button>
+  </div>
+</form>
+
+<!-- Tabs de catégories -->
+<ul class="nav nav-tabs mb-4">
+  <li class="nav-item">
+    <a class="nav-link {% if not categorie_id or categorie_id == 'all' %}active{% endif %}"
+       href="{% url 'menu' %}?{% if recherche %}recherche={{ recherche }}&{% endif %}{% if tri_prix %}prix={{ tri_prix }}&{% endif %}categorie=all">
+       Tous
+    </a>
+  </li>
+  {% for cat in categories %}
+    <li class="nav-item">
+      <a class="nav-link {% if cat.id|stringformat:"s" == categorie_id %}active{% endif %}"
+         href="{% url 'menu' %}?{% if recherche %}recherche={{ recherche }}&{% endif %}{% if tri_prix %}prix={{ tri_prix }}&{% endif %}categorie={{ cat.id }}">
+         {{ cat.nom }}
+      </a>
+    </li>
+  {% endfor %}
+</ul>
+
+<!-- Grille des plats -->
+<div class="row">
+  {% for plat in plats %}
+    <div class="col-md-3 mb-4">
+      <div class="card h-100 shadow-sm">
+        {% if plat.image %}
+          <img src="{{ plat.image.url }}" class="card-img-top" alt="{{ plat.nom }}">
+        {% endif %}
+        <div class="card-body">
+          <h5 class="card-title">{{ plat.nom }}</h5>
+          <p class="card-text">{{ plat.description|truncatewords:15 }}</p>
+          <p class="fw-bold">{{ plat.prix }} €</p>
+        </div>
+      </div>
+    </div>
+  {% empty %}
+    <p>Aucun plat trouvé.</p>
+  {% endfor %}
+</div>
+
 {% endblock %}

@@ -1,7 +1,5 @@
-{% extends 'base.html' %}
-{% load static %}
-{% block title %}Accueil{% endblock %}
-{% block content %}
+{% extends 'base.html' %} {% load static %} 
+{% block title %}Accueil{% endblock %} {% block content %}
 
 <!-- Hero Section - Carousel -->
 <div id="carouselHero" class="carousel slide mb-4" data-bs-ride="carousel">
@@ -21,7 +19,7 @@
     </div>
     <div class="carousel-item">
       <img
-        src="{% static 'img/ramen.jpg' %}"
+        src="{% static 'img/Ramen.jpg' %}"
         class="d-block w-100"
         alt="Ramen"
       />
@@ -34,7 +32,7 @@
     </div>
     <div class="carousel-item">
       <img
-        src="{% static 'img/tempura.jpg' %}"
+        src="{% static 'img/c.jpg' %}"
         class="d-block w-100"
         alt="Tempura"
       />
@@ -80,47 +78,63 @@
   >
 </div>
 
-<!-- Offre spéciale -->
+<!-- Offre spéciale 1 - image à gauche -->
 <section class="row mb-5">
-  <div class="col-md-6">
-    <img
-      src="{% static 'img/special.jpg' %}"
-      alt="Plat du jour"
-      class="img-fluid rounded shadow"
-    />
-  </div>
-  <div class="col-md-6 d-flex flex-column justify-content-center">
-    <h3>Plat de la semaine 🍜</h3>
-    <p class="lead">
-      Découvrez notre ramen au miso et porc grillé — seulement cette semaine !
-    </p>
-  </div>
-</section>
+    <div class="col-md-6">
+      <a href="{% static 'img/menu.jpg' %}" target="_blank">
+        <img
+          src="{% static 'img/menu.jpg' %}"
+          alt="Plat du jour"
+          class="img-fluid rounded shadow"
+        />
+      </a>
+    </div>
+    <div class="col-md-6 d-flex flex-column justify-content-center">
+      <h3>Offre spéciale</h3>
+      <p class="lead">
+        Découvrez notre ramen au miso et porc grillé — seulement cette semaine !
+      </p>
+    </div>
+  </section>
 
-<!-- Avis clients -->
-<section class="mb-5">
-  <h3 class="text-center">Ce que disent nos clients ❤️</h3>
-  <div class="row text-center mt-4">
-    <div class="col-md-4">
-      <blockquote class="blockquote">
-        <p>“Excellent ! Les sushis sont incroyables.”</p>
-        <footer class="blockquote-footer">Sophie 🌟🌟🌟🌟🌟</footer>
-      </blockquote>
+<!-- Offre spéciale 2 - image à droite -->
+<section class="row mb-5">
+    <div class="col-md-6 d-flex flex-column justify-content-center">
+      <h3>Menu bateau spécial 🍱</h3>
+      <p class="lead">
+        Bento complet avec riz, poisson grillé, légumes et soupe miso — disponible tous les midis !
+      </p>
     </div>
-    <div class="col-md-4">
-      <blockquote class="blockquote">
-        <p>“Ambiance zen et plats délicieux, je recommande !”</p>
-        <footer class="blockquote-footer">Antoine 🌟🌟🌟🌟🌟</footer>
-      </blockquote>
+    <div class="col-md-6">
+      <a href="{% static 'img/bateau.jpg' %}" target="_blank">
+        <img
+          src="{% static 'img/bateau.jpg' %}"
+          alt="Menu Bento"
+          class="img-fluid rounded shadow"
+        />
+      </a>
     </div>
-    <div class="col-md-4">
-      <blockquote class="blockquote">
-        <p>“Service rapide, parfait pour le déjeuner.”</p>
-        <footer class="blockquote-footer">Julie 🌟🌟🌟🌟</footer>
-      </blockquote>
+  </section>
+
+  <section class="row mb-5">
+    <div class="col-md-6">
+      <a href="{% static 'img/magi.jpg' %}" target="_blank">
+        <img
+          src="{% static 'img/magi.jpg' %}"
+          alt="Plat du jour"
+          class="img-fluid rounded shadow"
+        />
+      </a>
     </div>
-  </div>
-</section>
+    <div class="col-md-6 d-flex flex-column justify-content-center">
+      <h3>Menu maki sushi sashimi </h3>
+      <p class="lead">
+        Découvrez notre ramen au miso et porc grillé — seulement cette semaine !
+      </p>
+    </div>
+  </section>
+    
+
 
 <!-- Horaires et adresse (mini) -->
 <section class="mb-5 bg-light p-4 rounded shadow-sm">
