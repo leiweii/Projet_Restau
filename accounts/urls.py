@@ -8,4 +8,9 @@ urlpatterns = [
     path('deconnexion/', auth_views.LogoutView.as_view(), name='logout'),
     path('profil/', profile_view, name='profile'),
     path('profil/modifier/', profile_update_view, name='profile_edit'),
+
+    path('profil/password/', auth_views.PasswordChangeView.as_view(
+        template_name='accounts/password_change.html',
+        success_url='/compte/profil/'
+    ), name='password_change'),
 ]

@@ -4,5 +4,6 @@
 <p>Email : {{ user.email }}</p>
 <p>Téléphone : {{ user.profile.telephone }}</p>
 <p>Préférences : {{ user.profile.preferences }}</p>
-<a href="{% url 'profile_edit' %}">Modifier mon profil</a>
+<a href="{% url 'profile_edit' %}" class="btn btn-outline-secondary">Modifier mes infos</a>
+<a href="{% url 'password_change' %}" class="btn btn-outline-warning">Modifier mon mot de passe</a>
 {% endblock %}

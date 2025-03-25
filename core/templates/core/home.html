@@ -1,7 +1,151 @@
 {% extends 'base.html' %}
-
+{% load static %}
+{% block title %}Accueil{% endblock %}
 {% block content %}
-<h2>Bienvenue chez Mon Restaurant !</h2>
-<p>Réservez votre table, consultez notre menu, et profitez de nos plats maison.</p>
-{% comment %} <img src="{% static 'images/accueil.jpg' %}" alt="Photo du restaurant" width="600"> {% endcomment %}
+
+<!-- Hero Section - Carousel -->
+<div id="carouselHero" class="carousel slide mb-4" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img
+        src="{% static 'img/sushi.jpeg' %}"
+        class="d-block w-100"
+        alt="Sushi"
+      />
+      <div
+        class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded"
+      >
+        <h5>Sushi frais préparé à la commande</h5>
+        <p>Tradition japonaise et ingrédients de qualité</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img
+        src="{% static 'img/ramen.jpg' %}"
+        class="d-block w-100"
+        alt="Ramen"
+      />
+      <div
+        class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded"
+      >
+        <h5>Ramen fait maison</h5>
+        <p>Un bol de chaleur et de réconfort</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img
+        src="{% static 'img/tempura.jpg' %}"
+        class="d-block w-100"
+        alt="Tempura"
+      />
+      <div
+        class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded"
+      >
+        <h5>Tempura croustillant</h5>
+        <p>Friture légère à la japonaise</p>
+      </div>
+    </div>
+  </div>
+  <button
+    class="carousel-control-prev"
+    type="button"
+    data-bs-target="#carouselHero"
+    data-bs-slide="prev"
+  >
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button
+    class="carousel-control-next"
+    type="button"
+    data-bs-target="#carouselHero"
+    data-bs-slide="next"
+  >
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+
+<!-- Présentation du restaurant -->
+<section class="mb-5 text-center">
+  <h2>Bienvenue chez Osaka</h2>
+  <p class="lead">
+    Depuis 2010, nous vous proposons une cuisine japonaise authentique, dans une
+    ambiance chaleureuse et moderne.
+  </p>
+</section>
+
+<!-- Réserver -->
+<div class="text-center mb-4">
+  <a href="{% url 'reserver' %}" class="btn btn-primary btn-lg"
+    >🍣 Réserver une table</a
+  >
+</div>
+
+<!-- Offre spéciale -->
+<section class="row mb-5">
+  <div class="col-md-6">
+    <img
+      src="{% static 'img/special.jpg' %}"
+      alt="Plat du jour"
+      class="img-fluid rounded shadow"
+    />
+  </div>
+  <div class="col-md-6 d-flex flex-column justify-content-center">
+    <h3>Plat de la semaine 🍜</h3>
+    <p class="lead">
+      Découvrez notre ramen au miso et porc grillé — seulement cette semaine !
+    </p>
+  </div>
+</section>
+
+<!-- Avis clients -->
+<section class="mb-5">
+  <h3 class="text-center">Ce que disent nos clients ❤️</h3>
+  <div class="row text-center mt-4">
+    <div class="col-md-4">
+      <blockquote class="blockquote">
+        <p>“Excellent ! Les sushis sont incroyables.”</p>
+        <footer class="blockquote-footer">Sophie 🌟🌟🌟🌟🌟</footer>
+      </blockquote>
+    </div>
+    <div class="col-md-4">
+      <blockquote class="blockquote">
+        <p>“Ambiance zen et plats délicieux, je recommande !”</p>
+        <footer class="blockquote-footer">Antoine 🌟🌟🌟🌟🌟</footer>
+      </blockquote>
+    </div>
+    <div class="col-md-4">
+      <blockquote class="blockquote">
+        <p>“Service rapide, parfait pour le déjeuner.”</p>
+        <footer class="blockquote-footer">Julie 🌟🌟🌟🌟</footer>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- Horaires et adresse (mini) -->
+<section class="mb-5 bg-light p-4 rounded shadow-sm">
+  <h4>📍 Osaka – 45 Rue du Japon, 75013 Paris</h4>
+  <p>🕒 Ouvert tous les jours de 12h à 22h</p>
+  <a href="{% url 'contact' %}" class="btn btn-outline-secondary"
+    >Voir la page Contact</a
+  >
+</section>
+
+<!-- Réseaux sociaux -->
+<section class="text-center mb-5">
+  <h4>📷 Suivez-nous sur Instagram</h4>
+  <a
+    href="https://www.instagram.com/toncompte/"
+    target="_blank"
+    class="btn btn-outline-dark m-2"
+    >Instagram</a
+  >
+  <a
+    href="https://www.facebook.com/toncompte/"
+    target="_blank"
+    class="btn btn-outline-dark m-2"
+    >Facebook</a
+  >
+</section>
+
 {% endblock %}

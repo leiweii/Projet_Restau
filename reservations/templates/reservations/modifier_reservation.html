@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}Modifier réservation{% endblock %}
+{% block content %}
+
+<h2>Modifier votre réservation</h2>
+
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit" class="btn btn-primary">Enregistrer les modifications</button>
+  <a href="{% url 'mes_reservations' %}" class="btn btn-secondary">Annuler</a>
+</form>
+
+{% endblock %}

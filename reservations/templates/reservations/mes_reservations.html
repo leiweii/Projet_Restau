@@ -1,14 +1,32 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% block title %}Mes réservations{% endblock %} 
 {% block content %}
+
 <h2>Mes réservations</h2>
-<ul>
+
+{% if messages %} {% for message in messages %}
+<div class="alert alert-success">{{ message }}</div>
+{% endfor %} {% endif %}
+
+<ul class="list-group">
   {% for r in reservations %}
-    <li>
-      📅 {{ r.date }} à {{ r.heure }} – {{ r.nombre_personnes }} personnes
-      <br>☎️ {{ r.telephone }} – ✉️ {{ r.email }}
-    </li>
+  <li class="list-group-item">
+    📅 <strong>{{ r.date }}</strong> à <strong>{{ r.heure }}</strong> – {{ r.nombre_personnes }} personnes <br />
+    ☎️ {{ r.telephone }} – ✉️ {{ r.email}}
+    <br />
+    <a
+      href="{% url 'modifier_reservation' r.id %}"
+      class="btn btn-sm btn-warning mt-2"
+      >Modifier</a
+    >
+    <a
+      href="{% url 'supprimer_reservation' r.id %}"
+      class="btn btn-sm btn-danger mt-2"
+      >Annuler</a
+    >
+  </li>
   {% empty %}
-    <li>Aucune réservation trouvée.</li>
+  <li class="list-group-item">Aucune réservation trouvée.</li>
   {% endfor %}
 </ul>
+
 {% endblock %}

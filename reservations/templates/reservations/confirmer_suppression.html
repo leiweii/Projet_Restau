@@ -1,0 +1,14 @@
+{% extends 'base.html' %} {% block title %}Annuler réservation{% endblock %} 
+{% block content %}
+
+<h2>
+  Annuler la réservation du {{ reservation.date }} à {{ reservation.heure }} ?
+</h2>
+
+<form method="post">
+  {% csrf_token %}
+  <button type="submit" class="btn btn-danger">Confirmer l’annulation</button>
+  <a href="{% url 'mes_reservations' %}" class="btn btn-secondary">Retour</a>
+</form>
+
+{% endblock %}

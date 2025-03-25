@@ -1,7 +1,10 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from .forms import UserRegistrationForm, ProfileUpdateForm
+from .forms import UserRegistrationForm, UserProfileUpdateForm
+from django.contrib import messages
+
+
 
 def register_view(request):
     if request.method == 'POST':
@@ -24,12 +27,16 @@ def profile_view(request):
 
 @login_required
 def profile_update_view(request):
-    profile = request.user.profile
+    user = request.user
+    profile = user.profile
+
     if request.method == 'POST':
-        form = ProfileUpdateForm(request.POST, instance=profile)
+        form = UserProfileUpdateForm(request.POST, instance=user, profile=profile)
         if form.is_valid():
-            form.save()
+            form.save(user_instance=user, profile_instance=profile)
+            messages.success(request, "Profil mis à jour avec succès.")
             return redirect('profile')
     else:
-        form = ProfileUpdateForm(instance=profile)
+        form = UserProfileUpdateForm(instance=user, profile=profile)
+
     return render(request, 'accounts/profile_edit.html', {'form': form})
