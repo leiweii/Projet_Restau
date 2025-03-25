@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>👥 Gestion des utilisateurs</h2>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Nom d'utilisateur</th>
+      <th>Email</th>
+      <th>Téléphone</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for user in users %}
+      <tr>
+        <td>{{ user.username }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.profile.telephone }}</td>
+        <td>
+          <a href="{% url 'user_edit' user.pk %}" class="btn btn-sm btn-warning">✏️</a>
+          <a href="{% url 'user_delete' user.pk %}" class="btn btn-sm btn-danger">🗑️</a>
+        </td>
+      </tr>
+    {% empty %}
+      <tr><td colspan="4">Aucun utilisateur trouvé.</td></tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<a href="{% url 'dashboard' %}" class="btn btn-secondary">⬅ Retour</a>
+{% endblock %}

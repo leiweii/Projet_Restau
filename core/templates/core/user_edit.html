@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>✏️ Modifier utilisateur : {{ user_obj.username }}</h2>
+
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit" class="btn btn-success">Enregistrer</button>
+  <a href="{% url 'user_list' %}" class="btn btn-secondary">Annuler</a>
+</form>
+{% endblock %}

@@ -97,13 +97,21 @@
                 >👤 {{ user.username }}</a
               >
             </li>
+            {% if user.is_staff %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'dashboard' %}">Panneau d'administration</a>
+            </li>
+            {% endif %}
+
             <li class="nav-item">
               <a class="nav-link" href="/reservations/mes/">Mes réservations</a>
             </li>
             <form method="post" action="{% url 'logout' %}" class="d-inline">
               {% csrf_token %}
-              <button type="submit" class="btn btn-link nav-link">Déconnexion</button>
-            </form>            
+              <button type="submit" class="btn btn-link nav-link">
+                Déconnexion
+              </button>
+            </form>
             {% else %}
             <li class="nav-item">
               <a class="nav-link" href="/compte/connexion/">Connexion</a>

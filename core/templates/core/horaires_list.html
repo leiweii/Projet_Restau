@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %}Jours spéciaux{% endblock %}
+{% block content %}
+<h2>📅 Gestion des jours spéciaux</h2>
+
+<a href="{% url 'horaire_create' %}" class="btn btn-success mb-3">➕ Ajouter un jour</a>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Fermé ?</th>
+      <th>Ouverture</th>
+      <th>Fermeture</th>
+      <th>Description</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for h in horaires %}
+      <tr>
+        <td>{{ h.date }}</td>
+        <td>{{ h.ferme|yesno:"✅,❌" }}</td>
+        <td>{{ h.ouverture }}</td>
+        <td>{{ h.fermeture }}</td>
+        <td>{{ h.description }}</td>
+        <td>
+          <a href="{% url 'horaire_edit' h.pk %}" class="btn btn-sm btn-warning">✏️</a>
+          <a href="{% url 'horaire_delete' h.pk %}" class="btn btn-sm btn-danger">🗑️</a>
+        </td>
+      </tr>
+    {% empty %}
+      <tr><td colspan="6">Aucun jour spécial défini.</td></tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<a href="{% url 'dashboard' %}" class="btn btn-secondary mt-3">⬅ Retour au dashboard</a>
+{% endblock %}
