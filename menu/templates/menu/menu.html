@@ -53,6 +53,16 @@
         <div class="card-body">
           <h5 class="card-title">{{ plat.nom }}</h5>
           <p class="card-text">{{ plat.description|truncatewords:15 }}</p>
+
+          {% if plat.allergenes.all %}
+            <p class="text-danger mb-1">
+              <strong>Allergènes :</strong>
+              {% for allergene in plat.allergenes.all %}
+                {{ allergene.nom }}{% if not forloop.last %}, {% endif %}
+              {% endfor %}
+            </p>
+          {% endif %}
+
           <p class="fw-bold">{{ plat.prix }} €</p>
         </div>
       </div>
@@ -61,5 +71,6 @@
     <p>Aucun plat trouvé.</p>
   {% endfor %}
 </div>
+
 
 {% endblock %}

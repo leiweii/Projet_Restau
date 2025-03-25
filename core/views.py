@@ -2,14 +2,15 @@ from datetime import date
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import user_passes_test
 from reservations.models import Reservation, HoraireSpecial
-from menu.models import Plat, Categorie
+from menu.models import Plat, Categorie, Allergene
 from django.db.models import Q
 from reservations.forms import ReservationForm
-from menu.forms import PlatForm, CategorieForm
+from menu.forms import PlatForm, CategorieForm, AllergeneForm
 from reservations.forms import HoraireSpecialForm
 from django.contrib.auth.models import User
 from accounts.models import Profile
 from accounts.forms import UserProfileUpdateForm
+
 
 
 def contact_view(request):
@@ -168,9 +169,6 @@ def horaire_delete(request, pk):
 
 # gerer les catégories
 
-from menu.models import Categorie
-from menu.forms import CategorieForm
-
 @user_passes_test(admin_required)
 def categorie_list(request):
     categories = Categorie.objects.all().order_by('nom')
@@ -235,3 +233,35 @@ def user_delete(request, pk):
         user.delete()
         return redirect('user_list')
     return render(request, 'core/user_delete.html', {'user_obj': user})
+
+
+# gerer les allergies
+@user_passes_test(admin_required)
+def allergene_list(request):
+    allergenes = Allergene.objects.order_by('nom')
+    return render(request, 'core/allergene_list.html', {'allergenes': allergenes})
+
+@user_passes_test(admin_required)
+def allergene_create(request):
+    form = AllergeneForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        return redirect('allergene_list')
+    return render(request, 'core/allergene_form.html', {'form': form, 'title': 'Ajouter un allergène'})
+
+@user_passes_test(admin_required)
+def allergene_edit(request, pk):
+    allergene = get_object_or_404(Allergene, pk=pk)
+    form = AllergeneForm(request.POST or None, instance=allergene)
+    if form.is_valid():
+        form.save()
+        return redirect('allergene_list')
+    return render(request, 'core/allergene_form.html', {'form': form, 'title': 'Modifier l’allergène'})
+
+@user_passes_test(admin_required)
+def allergene_delete(request, pk):
+    allergene = get_object_or_404(Allergene, pk=pk)
+    if request.method == 'POST':
+        allergene.delete()
+        return redirect('allergene_list')
+    return render(request, 'core/allergene_delete.html', {'allergene': allergene})

@@ -1,7 +1,9 @@
 from django.urls import path
 from .views import home_view, contact_view, dashboard_home, reservation_edit, reservation_delete, plat_edit, plat_delete, plat_create
 from .views import horaires_list, horaire_create, horaire_edit, horaire_delete, categorie_list, categorie_create, categorie_edit, categorie_delete
-from .views import user_list, user_edit, user_delete
+from .views import user_list, user_edit, user_delete, allergene_list, allergene_create, allergene_edit, allergene_delete
+
+
 urlpatterns = [
     path('', home_view, name='home'),
     path('contact/', contact_view, name='contact'),
@@ -22,5 +24,9 @@ urlpatterns = [
     path('admin-panel/users/', user_list, name='user_list'),
     path('admin-panel/users/<int:pk>/edit/', user_edit, name='user_edit'),
     path('admin-panel/users/<int:pk>/delete/', user_delete, name='user_delete'),
+    path('admin-panel/allergenes/', allergene_list, name='allergene_list'),
+    path('admin-panel/allergenes/add/', allergene_create, name='allergene_create'),
+    path('admin-panel/allergenes/<int:pk>/edit/', allergene_edit, name='allergene_edit'),
+    path('admin-panel/allergenes/<int:pk>/delete/', allergene_delete, name='allergene_delete'),
 
 ]

@@ -6,6 +6,13 @@ class Categorie(models.Model):
     def __str__(self):
         return self.nom
 
+class Allergene(models.Model):
+    nom = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.nom
+    
+    
 class Plat(models.Model):
     categorie = models.ForeignKey(Categorie, on_delete=models.CASCADE)
     nom = models.CharField(max_length=100)
@@ -13,6 +20,11 @@ class Plat(models.Model):
     prix = models.DecimalField(max_digits=6, decimal_places=2)
     disponible = models.BooleanField(default=True)
     image = models.ImageField(upload_to='plats/', blank=True, null=True)
+    
+    allergenes = models.ManyToManyField(Allergene, blank=True)
 
     def __str__(self):
         return f"{self.nom} ({self.prix}€)"
+
+
+
