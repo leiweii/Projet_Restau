@@ -13,4 +13,10 @@ urlpatterns = [
         template_name='accounts/password_change.html',
         success_url='/compte/profil/'
     ), name='password_change'),
+
+    path('mot-de-passe-oublie/', auth_views.PasswordResetView.as_view(template_name='accounts/password_reset.html'), name='password_reset'),
+    path('mot-de-passe-envoye/', auth_views.PasswordResetDoneView.as_view(template_name='accounts/password_reset_done.html'), name='password_reset_done'),
+    path('reinitialiser/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(template_name='accounts/password_reset_confirm.html'), name='password_reset_confirm'),
+    path('mot-de-passe-modifie/', auth_views.PasswordResetCompleteView.as_view(template_name='accounts/password_reset_complete.html'), name='password_reset_complete'),
+
 ]

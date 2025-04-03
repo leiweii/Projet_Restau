@@ -1,13 +1,14 @@
 from django import forms
-from .models import Plat, Categorie, Allergene
+from .models import Plat, Categorie, Ingredient
 
 class PlatForm(forms.ModelForm):
     class Meta:
         model = Plat
-        fields = ['nom', 'categorie', 'description', 'prix', 'disponible', 'image', 'allergenes']
+        fields = ['nom', 'categorie', 'description', 'prix', 'disponible', 'image', 'ingredients']
         widgets = {
-            'allergenes': forms.CheckboxSelectMultiple()
+            'ingredients': forms.CheckboxSelectMultiple()
         }
+
 
 
 
@@ -17,7 +18,9 @@ class CategorieForm(forms.ModelForm):
         fields = ['nom']
 
 
-class AllergeneForm(forms.ModelForm):
+
+class IngredientForm(forms.ModelForm):
     class Meta:
-        model = Allergene
+        model = Ingredient
         fields = ['nom']
+

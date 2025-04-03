@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Supprimer ingrédient{% endblock %}
+{% block content %}
+<h2>🗑️ Supprimer l’ingrédient</h2>
+<p>Voulez-vous vraiment supprimer <strong>{{ ingredient.nom }}</strong> ?</p>
+
+<form method="post">
+  {% csrf_token %}
+  <button type="submit" class="btn btn-danger">Oui, supprimer</button>
+  <a href="{% url 'ingredient_list' %}" class="btn btn-secondary">Annuler</a>
+</form>
+{% endblock %}

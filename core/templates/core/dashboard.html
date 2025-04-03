@@ -30,8 +30,10 @@
       </a>
     </div>
     <div class="col-md-4 mb-3">
-      <a href="{% url 'allergene_list' %}" class="btn btn-outline-primary w-100 py-3 shadow"
-        >⚠️ Gérer les allergènes</a
+      <a
+        href="{% url 'ingredient_list' %}"
+        class="btn btn-outline-primary w-100 py-3 shadow"
+        >⚠️ Gérer les ingredients</a
       >
     </div>
   </div>
@@ -118,7 +120,7 @@
               <th>description</th>
               <th>Prix</th>
               <th>Disponible</th>
-              <th>allergènes</th>
+              <th>ingredient</th>
               <th>Actions</th>
             </tr>
           </thead>
@@ -126,14 +128,17 @@
             {% for plat in plats %}
             <tr>
               <td>{{ plat.nom }}</td>
-              <td>{{ plat.categorie.nom }}</td>
               <td>{{ plat.description|truncatewords:15 }}</td>
+              <td>{{ plat.categorie.nom }}</td>
               <td>{{ plat.prix }} €</td>
               <td>{{ plat.disponible|yesno:"✅,❌" }}</td>
               <td>
-                {% for a in plat.allergenes.all %}
-                {{ a.nom }}{% if not forloop.last %}, {% endif %}
+                {% for ing in plat.ingredients.all %}
+                <span class="badge bg-secondary">{{ ing.nom }}</span>
+                {% empty %}
+                <span class="text-muted">—</span>
                 {% endfor %}
+              </td>
               <td>
                 <a
                   href="{% url 'plat_edit' plat.id %}"
@@ -146,10 +151,6 @@
                   >🗑️</a
                 >
               </td>
-            </tr>
-            {% empty %}
-            <tr>
-              <td colspan="5">Aucun plat enregistré.</td>
             </tr>
             {% endfor %}
           </tbody>

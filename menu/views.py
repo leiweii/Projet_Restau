@@ -7,7 +7,7 @@ def menu_view(request):
 
     # Get params
     categorie_id = request.GET.get('categorie')
-    recherche = request.GET.get('recherche')
+    recherche = request.GET.get('recherche','')
     tri_prix = request.GET.get('prix')
 
     plats = Plat.objects.filter(disponible=True)

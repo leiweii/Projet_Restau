@@ -2,15 +2,14 @@ from datetime import date
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import user_passes_test
 from reservations.models import Reservation, HoraireSpecial
-from menu.models import Plat, Categorie, Allergene
+from menu.models import Plat, Categorie, Ingredient
 from django.db.models import Q
 from reservations.forms import ReservationForm
-from menu.forms import PlatForm, CategorieForm, AllergeneForm
+from menu.forms import PlatForm, CategorieForm, IngredientForm
 from reservations.forms import HoraireSpecialForm
 from django.contrib.auth.models import User
 from accounts.models import Profile
 from accounts.forms import UserProfileUpdateForm
-
 
 
 def contact_view(request):
@@ -22,13 +21,13 @@ def contact_view(request):
         fermeture_message = f"⚠️ Le restaurant est exceptionnellement fermé aujourd’hui ({today.strftime('%d/%m/%Y')})."
 
     horaires = {
-        'Lundi': 'Fermé',
-        'Mardi': '12h00 - 14h00 / 19h00 - 22h00',
-        'Mercredi': '12h00 - 14h00 / 19h00 - 22h00',
-        'Jeudi': '12h00 - 14h00 / 19h00 - 22h00',
-        'Vendredi': '12h00 - 14h00 / 19h00 - 22h30',
-        'Samedi': '12h00 - 14h30 / 19h00 - 22h30',
-        'Dimanche': '12h00 - 14h30 / 19h00 - 22h00',
+        'Lundi': '12h00 - 14h30 / 19h00 - 22h30',
+        'Mardi': '12h00 - 14h30 / 19h00 - 22h30',
+        'Mercredi': '12h00 - 14h30 / 19h00 - 22h30',
+        'Jeudi': '12h00 - 14h30 / 19h00 - 22h30',
+        'Vendredi': '12h00 - 14h30 / 19h00 - 22h30',
+        'Samedi': ' ----------/ 19h00 - 22h30',
+        'Dimanche': '-------- / 19h00 - 22h30',
     }
 
     return render(request, 'core/contact.html', {
@@ -235,33 +234,36 @@ def user_delete(request, pk):
     return render(request, 'core/user_delete.html', {'user_obj': user})
 
 
-# gerer les allergies
-@user_passes_test(admin_required)
-def allergene_list(request):
-    allergenes = Allergene.objects.order_by('nom')
-    return render(request, 'core/allergene_list.html', {'allergenes': allergenes})
+# gerer les Ingredients
 
 @user_passes_test(admin_required)
-def allergene_create(request):
-    form = AllergeneForm(request.POST or None)
+def ingredient_list(request):
+    ingredients = Ingredient.objects.order_by('nom')
+    return render(request, 'core/ingredient_list.html', {'ingredients': ingredients})
+
+@user_passes_test(admin_required)
+def ingredient_create(request):
+    form = IngredientForm(request.POST or None)
     if form.is_valid():
         form.save()
-        return redirect('allergene_list')
-    return render(request, 'core/allergene_form.html', {'form': form, 'title': 'Ajouter un allergène'})
+        return redirect('ingredient_list')
+    return render(request, 'core/ingredient_form.html', {'form': form, 'title': 'Ajouter un ingrédient'})
 
 @user_passes_test(admin_required)
-def allergene_edit(request, pk):
-    allergene = get_object_or_404(Allergene, pk=pk)
-    form = AllergeneForm(request.POST or None, instance=allergene)
+def ingredient_edit(request, pk):
+    ingredient = get_object_or_404(Ingredient, pk=pk)
+    form = IngredientForm(request.POST or None, instance=ingredient)
     if form.is_valid():
         form.save()
-        return redirect('allergene_list')
-    return render(request, 'core/allergene_form.html', {'form': form, 'title': 'Modifier l’allergène'})
+        return redirect('ingredient_list')
+    return render(request, 'core/ingredient_form.html', {'form': form, 'title': 'Modifier l’ingrédient'})
 
 @user_passes_test(admin_required)
-def allergene_delete(request, pk):
-    allergene = get_object_or_404(Allergene, pk=pk)
+def ingredient_delete(request, pk):
+    ingredient = get_object_or_404(Ingredient, pk=pk)
     if request.method == 'POST':
-        allergene.delete()
-        return redirect('allergene_list')
-    return render(request, 'core/allergene_delete.html', {'allergene': allergene})
+        ingredient.delete()
+        return redirect('ingredient_list')
+    return render(request, 'core/ingredient_delete.html', {'ingredient': ingredient})
+
+

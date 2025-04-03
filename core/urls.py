@@ -1,7 +1,7 @@
 from django.urls import path
 from .views import home_view, contact_view, dashboard_home, reservation_edit, reservation_delete, plat_edit, plat_delete, plat_create
 from .views import horaires_list, horaire_create, horaire_edit, horaire_delete, categorie_list, categorie_create, categorie_edit, categorie_delete
-from .views import user_list, user_edit, user_delete, allergene_list, allergene_create, allergene_edit, allergene_delete
+from .views import user_list, user_edit, user_delete, ingredient_list, ingredient_create, ingredient_edit, ingredient_delete
 
 
 urlpatterns = [
@@ -24,9 +24,9 @@ urlpatterns = [
     path('admin-panel/users/', user_list, name='user_list'),
     path('admin-panel/users/<int:pk>/edit/', user_edit, name='user_edit'),
     path('admin-panel/users/<int:pk>/delete/', user_delete, name='user_delete'),
-    path('admin-panel/allergenes/', allergene_list, name='allergene_list'),
-    path('admin-panel/allergenes/add/', allergene_create, name='allergene_create'),
-    path('admin-panel/allergenes/<int:pk>/edit/', allergene_edit, name='allergene_edit'),
-    path('admin-panel/allergenes/<int:pk>/delete/', allergene_delete, name='allergene_delete'),
+    path('admin-panel/ingredients/', ingredient_list, name='ingredient_list'),
+    path('admin-panel/ingredients/add/', ingredient_create, name='ingredient_create'),
+    path('admin-panel/ingredients/<int:pk>/edit/', ingredient_edit, name='ingredient_edit'),
+    path('admin-panel/ingredients/<int:pk>/delete/', ingredient_delete, name='ingredient_delete'),
 
 ]
