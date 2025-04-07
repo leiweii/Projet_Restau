@@ -27,10 +27,10 @@
 <!-- Tabs de catégories -->
 <ul class="nav nav-tabs mb-4">
   <li class="nav-item">
-    <a class="nav-link {% if not categorie_id or categorie_id == 'all' %}active{% endif %}"
+    {% comment %} <a class="nav-link {% if not categorie_id or categorie_id == 'all' %}active{% endif %}"
        href="{% url 'menu' %}?{% if recherche %}recherche={{ recherche }}&{% endif %}{% if tri_prix %}prix={{ tri_prix }}&{% endif %}categorie=all">
        Tous
-    </a>
+    </a> {% endcomment %}
   </li>
   {% for cat in categories %}
     <li class="nav-item">
@@ -42,7 +42,7 @@
   {% endfor %}
 </ul>
 
-<!-- Grille des plats -->
+<!-- Menu -->
 <div class="row">
   {% for plat in plats %}
     <div class="col-md-3 mb-4">
