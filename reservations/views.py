@@ -27,7 +27,7 @@ def reserver_view(request):
                 reservation.user = request.user
             reservation.save()
 
-            # ✅ Email de confirmation
+            # ✅ Email de confirmation client
             objet = "Confirmation de votre réservation"
             message = f"""
 Bonjour {reservation.nom},
@@ -47,10 +47,30 @@ Merci et à bientôt !
                 fail_silently=False,
             )
 
+            # 📩 Email au patron
+            message_pour_patron = f"""
+Nouvelle réservation enregistrée :
+
+👤 Nom : {reservation.nom}
+📅 Date : {reservation.date.strftime('%d/%m/%Y')}
+🕒 Heure : {reservation.heure}
+👥 Nombre de personnes : {reservation.nombre_personnes}
+📞 Téléphone : {reservation.telephone}
+📧 Email : {reservation.email}
+"""
+            send_mail(
+                "📌 Nouvelle réservation – OSAKA",
+                message_pour_patron,
+                settings.DEFAULT_FROM_EMAIL,
+                [settings.PATRON_EMAIL],
+                fail_silently=False,
+            )
+
             messages.success(request, "Votre réservation a bien été enregistrée ✅")
             return render(request, 'reservations/confirmation.html', {'reservation': reservation})
+
     else:
-        # Pré-remplissage pour utilisateur connecté
+        # Pré-remplissage si connecté
         initial = {}
         if request.user.is_authenticated:
             initial = {

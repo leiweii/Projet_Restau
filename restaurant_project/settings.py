@@ -159,6 +159,7 @@ LOGIN_URL = 'login'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
+PATRON_EMAIL = 'shileiwei0930@gmail.com'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'

@@ -1,20 +1,82 @@
-{% extends 'base.html' %} {% load form_tags %} 
-{% block title %}Réserver une table{% endblock %} {%block content %}
+{% extends 'base.html' %}
+{% load form_tags %}
+{% block title %}Réserver une table{% endblock %}
 
+{% block content %}
 <h2 class="mb-4">Réserver une table</h2>
 
+<div class="alert alert-info" id="horaire-info">
+  📅 Veuillez choisir une date pour voir les horaires d’ouverture.
+</div>
+
 <form method="post" class="row g-3">
-  {% csrf_token %} {% for field in form %}
-  <div class="col-md-6">
-    <label class="form-label">{{ field.label }}</label>
-    {{ field|add_class:"form-control" }} {% if field.errors %}
-    <div class="text-danger small">{{ field.errors }}</div>
-    {% endif %}
-  </div>
+  {% csrf_token %}
+  {% for field in form %}
+    <div class="col-md-6">
+      <label class="form-label">{{ field.label }}</label>
+      {{ field|add_class:"form-control" }}
+      {% if field.errors %}
+        <div class="text-danger small">{{ field.errors }}</div>
+      {% endif %}
+    </div>
   {% endfor %}
   <div class="col-12">
     <button type="submit" class="btn btn-primary">Réserver</button>
   </div>
 </form>
+
+<!-- ✅ JS pour afficher les horaires selon le jour -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const dateInput = document.querySelector('input[name="date"]');
+  const heureInput = document.querySelector('input[name="heure"]');
+  const infoBox = document.getElementById('horaire-info');
+
+  function getOpeningHoursFor(day) {
+    switch(day) {
+      case 0: case 6: // Dimanche ou Samedi
+        return {
+          start: "19:00",
+          end: "22:30",
+          message: "🕖 Ouvert uniquement le soir de 19h00 à 22h30."
+        };
+      case 1: case 2: case 3: case 4: case 5: // Lundi à Vendredi
+        return {
+          start: "12:00",
+          end: "22:30",
+          message: "🕛 Ouvert de 12h00 à 14h30 et de 19h00 à 22h30."
+        };
+      default:
+        return null;
+    }
+  }
+
+  function onDateChange() {
+    const date = new Date(dateInput.value);
+    const day = date.getDay();
+    const hours = getOpeningHoursFor(day);
+
+    if (hours) {
+      heureInput.min = hours.start;
+      heureInput.max = hours.end;
+      infoBox.innerText = hours.message;
+      infoBox.classList.remove('alert-info');
+      infoBox.classList.add('alert-success');
+    } else {
+      infoBox.innerText = "❌ Jour invalide.";
+      infoBox.classList.add('alert-danger');
+    }
+
+    // Réinitialiser l'heure si elle n'est plus dans l'intervalle
+    if (heureInput.value && (heureInput.value < heureInput.min || heureInput.value > heureInput.max)) {
+      heureInput.value = '';
+    }
+  }
+
+  if (dateInput) {
+    dateInput.addEventListener('change', onDateChange);
+  }
+});
+</script>
 
 {% endblock %}

@@ -46,24 +46,49 @@
 <div class="row">
   {% for plat in plats %}
     <div class="col-md-3 mb-4">
-      <div class="card h-100 shadow-sm">
+      <!-- Carte du plat avec déclencheur modal -->
+      <div class="card h-100 shadow-sm" style="cursor:pointer;" data-bs-toggle="modal" data-bs-target="#platModal{{ plat.id }}">
         {% if plat.image %}
           <img src="{{ plat.image.url }}" class="card-img-top" alt="{{ plat.nom }}">
         {% endif %}
         <div class="card-body">
           <h5 class="card-title">{{ plat.nom }}</h5>
-          <p class="card-text">{{ plat.description|truncatewords:15 }}</p>
-
-          {% if plat.allergenes.all %}
-            <p class="text-danger mb-1">
-              <strong>Allergènes :</strong>
-              {% for allergene in plat.allergenes.all %}
-                {{ allergene.nom }}{% if not forloop.last %}, {% endif %}
-              {% endfor %}
-            </p>
-          {% endif %}
 
           <p class="fw-bold">{{ plat.prix }} €</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🔽 Fenêtre pour afficher les détails du plat -->
+    <div class="modal fade" id="platModal{{ plat.id }}" tabindex="-1" aria-labelledby="modalLabel{{ plat.id }}" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalLabel{{ plat.id }}">{{ plat.nom }}</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+          </div>
+          <div class="modal-body row">
+            {% if plat.image %}
+              <div class="col-md-5">
+                <img src="{{ plat.image.url }}" class="img-fluid rounded mb-3" alt="{{ plat.nom }}">
+              </div>
+            {% endif %}
+            <div class="col-md-7">
+              <p><strong>Description :</strong> {{ plat.description }}</p>
+              <p><strong>Prix :</strong> {{ plat.prix }} €</p>
+
+              {% if plat.ingredients.all %}
+                <p><strong>Ingrédients :</strong><br>
+                  {% for ing in plat.ingredients.all %}
+                    <span class="badge bg-secondary me-1">{{ ing.nom }}</span>
+                  {% endfor %}
+                </p>
+              {% endif %}
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+          </div>
         </div>
       </div>
     </div>
