@@ -84,6 +84,22 @@ Nouvelle réservation enregistrée :
 
 
 
+# def commander_view(request):
+#     if request.method == 'POST':
+#         form = CommandeForm(request.POST)
+#         if form.is_valid():
+#             commande = form.save(commit=False)
+#             if request.user.is_authenticated:
+#                 commande.user = request.user
+#             commande.save()
+#             form.save_m2m()
+#             return render(request, 'reservations/confirmation_commande.html', {'commande': commande})
+#     else:
+#         form = CommandeForm()
+#     return render(request, 'reservations/commander.html', {'form': form})
+
+
+
 @login_required
 def mes_reservations_view(request):
     reservations = Reservation.objects.filter(user=request.user).order_by('-date')

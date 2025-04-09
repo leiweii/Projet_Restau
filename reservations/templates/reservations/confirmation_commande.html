@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}Commande confirmée{% endblock %}
+{% block content %}
+<h2>✅ Merci pour votre commande !</h2>
+<p>À retirer le {{ commande.date }} à {{ commande.heure_retrait }}.</p>
+<p>Nom : {{ commande.nom }} – Téléphone : {{ commande.telephone }}</p>
+<ul>
+  {% for plat in commande.plats.all %}
+    <li>{{ plat.nom }} – {{ plat.prix }} €</li>
+  {% endfor %}
+</ul>
+<a href="/">Retour à l'accueil</a>
+{% endblock %}

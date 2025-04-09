@@ -62,6 +62,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'accounts.middleware.RequestLoggingMiddleware',
+
     
 ]
 
@@ -168,3 +170,61 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'shileiwei200@gmail.com'
 EMAIL_HOST_PASSWORD = 'rtxpdrkilmwxgtmq'
 DEFAULT_FROM_EMAIL = 'Restaurant <shileiwei200@gmail.com>'
+
+
+
+import os
+from pathlib import Path
+from datetime import datetime
+
+# Répertoire de base du projet
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+# Créer le répertoire des logs si inexistant
+LOGS_DIR = BASE_DIR / 'logs'
+LOGS_DIR.mkdir(exist_ok=True)
+
+# Nom de fichier avec la date du jour
+LOG_FILENAME = f'requests_{datetime.now().strftime("%Y-%m-%d")}.log'
+LOG_PATH = LOGS_DIR / LOG_FILENAME
+
+# Configuration de logging
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    
+    'formatters': {
+        'detailed': {
+            'format': '[{asctime}] {levelname} | {message}',
+            'style': '{',
+        },
+    },
+    
+    'handlers': {
+        'file_handler': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'filename': str(LOG_PATH),
+            'formatter': 'detailed',
+        },
+    },
+    
+    'loggers': {
+        'django.request': {
+            'handlers': ['file_handler'],
+            'level': 'INFO',
+            'propagate': False,
+        },
+        'django': {
+            'handlers': ['file_handler'],
+            'level': 'INFO',
+            'propagate': False,
+        },
+    },
+
+    # Désactiver la propagation des logs par défaut
+    'root': {
+        'handlers': ['file_handler'],
+        'level': 'INFO',
+    },
+}

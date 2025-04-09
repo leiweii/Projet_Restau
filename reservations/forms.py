@@ -11,6 +11,16 @@ class ReservationForm(forms.ModelForm):
         }
 
 
+# class CommandeForm(forms.ModelForm):
+#     class Meta:
+#         model = Commande
+#         fields = ['nom', 'telephone', 'date', 'heure_retrait', 'plats', 'commentaire']
+#         widgets = {
+#             'date': forms.DateInput(attrs={'type': 'date'}),
+#             'heure_retrait': forms.TimeInput(attrs={'type': 'time'}),
+#             'plats': forms.CheckboxSelectMultiple()
+#         }
+
 
 class HoraireSpecialForm(forms.ModelForm):
     class Meta:

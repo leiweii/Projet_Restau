@@ -6,5 +6,6 @@ urlpatterns = [
     path('mes/', mes_reservations_view, name='mes_reservations'),
     path('modifier/<int:pk>/', modifier_reservation_view, name='modifier_reservation'),
     path('supprimer/<int:pk>/', supprimer_reservation_view, name='supprimer_reservation'),
+    # path('commander/', commander_view, name='commander'),
 ]
 
