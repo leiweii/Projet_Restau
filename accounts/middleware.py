@@ -54,9 +54,3 @@ class RequestLoggingMiddleware:
         else:
             ip = request.META.get('REMOTE_ADDR')
         return ip
-    
-    
-    
-    
-    
-  

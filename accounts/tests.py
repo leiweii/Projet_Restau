@@ -20,3 +20,21 @@ class UserAccountTests(TestCase):
             'password': 'pass123'
         })
         self.assertEqual(response.status_code, 302)  # Redirection vers profil
+
+
+
+# from reservations.models import Reservation
+# from menu.models import Plat, Categorie, Ingredient
+# from django.contrib.auth.models import User
+# from datetime import date, time
+
+# Plat.objects.filter(disponible=True)
+
+
+# u = User.objects.get(username="leiwei")
+# Reservation.objects.filter(user=u)
+
+
+# p = Plat.objects.get(nom="Tempura crevette")
+# p.prix = 14.90
+# p.save()
