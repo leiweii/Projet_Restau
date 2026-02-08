@@ -2,6 +2,34 @@
 {% block title %}Tableau de bord{% endblock %}
 
 {% block content %}
+
+<hr class="my-5">
+<h4>🎁 Menus promotionnels</h4>
+
+<a href="{% url 'menu_promo_create' %}" class="btn btn-success mb-3">➕ Créer un menu promo</a>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Nom du menu</th>
+      <th>Composition</th>
+      <th>Prix après -20%</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for menu in menus %}
+      <tr>
+        <td>{{ menu.nom }}</td>
+        <td>{{ menu.plat_principal.nom }} + {{ menu.plat_associe.nom }}</td>
+        <td>{{ menu.prix_total }} €</td>
+      </tr>
+    {% empty %}
+      <tr><td colspan="4">Aucun menu promotionnel.</td></tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+
 <div class="container">
   <h2 class="mb-4 text-center">🎛️ Tableau de bord – Gestion</h2>
 

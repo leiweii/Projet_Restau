@@ -1,0 +1,131 @@
+[2025-09-25 08:51:27,529] INFO | Watching for file changes with StatReloader
+[2025-09-25 08:52:06,739] INFO | Watching for file changes with StatReloader
+[2025-09-25 08:52:12,466] INFO | Début de requête: {"method": "GET", "path": "/", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-09-25 08:52:12,500] INFO | Fin de requête: {"status_code": 200, "duration": "0.0339 secondes", "method": "GET", "path": "/", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-09-25 08:52:12,500] INFO | "GET / HTTP/1.1" 200 8821
+[2025-09-25 08:52:12,824] INFO | "GET /static/img/sushi.jpeg HTTP/1.1" 200 65506
+[2025-09-25 08:52:12,833] INFO | "GET /static/img/Ramen.jpg HTTP/1.1" 200 470539
+[2025-09-25 08:52:12,835] INFO | "GET /static/img/bateau.jpg HTTP/1.1" 200 252235
+[2025-09-25 08:52:12,839] INFO | "GET /static/img/menu.jpg HTTP/1.1" 200 53935
+[2025-09-25 08:52:12,841] INFO | "GET /static/img/c.jpg HTTP/1.1" 200 72152
+[2025-09-25 08:52:12,842] INFO | "GET /static/img/Saumon.png HTTP/1.1" 200 158556
+[2025-09-25 08:52:12,844] INFO | "GET /static/img/1.png HTTP/1.1" 200 272785
+[2025-09-25 08:52:12,847] INFO | "GET /static/img/magi.jpg HTTP/1.1" 200 119676
+[2025-09-25 08:52:13,155] INFO | Début de requête: {"method": "GET", "path": "/favicon.ico", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-09-25 08:52:13,175] ERROR | Requête avec erreur: {"status_code": 404, "duration": "0.0192 secondes", "method": "GET", "path": "/favicon.ico", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-09-25 08:52:13,175] WARNING | Not Found: /favicon.ico
+[2025-09-25 08:52:13,176] WARNING | "GET /favicon.ico HTTP/1.1" 404 9983
+[2025-09-25 08:52:43,740] INFO | Début de requête: {"method": "GET", "path": "/", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-09-25 08:52:43,743] INFO | Fin de requête: {"status_code": 200, "duration": "0.0044 secondes", "method": "GET", "path": "/", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-09-25 08:52:43,745] INFO | "GET / HTTP/1.1" 200 8821
+[2025-09-25 08:52:44,696] INFO | Début de requête: {"method": "GET", "path": "/menu/promotions/", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-09-25 08:52:44,725] INFO | Fin de requête: {"status_code": 200, "duration": "0.0295 secondes", "method": "GET", "path": "/menu/promotions/", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-09-25 08:52:44,727] INFO | "GET /menu/promotions/ HTTP/1.1" 200 5971
+[2025-09-25 08:52:44,806] INFO | Début de requête: {"method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_152759.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-09-25 08:52:44,813] INFO | Fin de requête: {"status_code": 200, "duration": "0.0073 secondes", "method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_152759.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-09-25 08:52:44,825] INFO | Début de requête: {"method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_154354.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-09-25 08:52:44,828] INFO | Début de requête: {"method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_152624.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-09-25 08:52:44,829] INFO | Début de requête: {"method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_155630.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-09-25 08:52:44,833] INFO | Fin de requête: {"status_code": 200, "duration": "0.0087 secondes", "method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_154354.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-09-25 08:52:44,836] INFO | Fin de requête: {"status_code": 200, "duration": "0.0073 secondes", "method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_152624.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-09-25 08:52:44,837] INFO | Fin de requête: {"status_code": 200, "duration": "0.0073 secondes", "method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_155630.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-09-25 08:52:44,839] INFO | "GET /media/plats/Capture_d%C3%A9cran_2025-04-07_152759.png HTTP/1.1" 200 253925
+[2025-09-25 08:52:44,846] INFO | "GET /media/plats/Capture_d%C3%A9cran_2025-04-07_155630.png HTTP/1.1" 200 175300
+[2025-09-25 08:52:44,847] INFO | "GET /media/plats/Capture_d%C3%A9cran_2025-04-07_154354.png HTTP/1.1" 200 259708
+[2025-09-25 08:52:44,848] INFO | "GET /media/plats/Capture_d%C3%A9cran_2025-04-07_152624.png HTTP/1.1" 200 280438
+[2025-09-25 08:52:46,377] INFO | Début de requête: {"method": "GET", "path": "/", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-09-25 08:52:46,380] INFO | Fin de requête: {"status_code": 200, "duration": "0.0045 secondes", "method": "GET", "path": "/", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-09-25 08:52:46,382] INFO | "GET / HTTP/1.1" 200 8821
+[2025-09-25 08:52:47,609] INFO | Début de requête: {"method": "GET", "path": "/", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-09-25 08:52:47,612] INFO | Fin de requête: {"status_code": 200, "duration": "0.0033 secondes", "method": "GET", "path": "/", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-09-25 08:52:47,614] INFO | "GET / HTTP/1.1" 200 8821
+[2025-09-25 08:52:49,406] INFO | Début de requête: {"method": "GET", "path": "/compte/connexion/", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-09-25 08:52:49,427] INFO | Fin de requête: {"status_code": 200, "duration": "0.0214 secondes", "method": "GET", "path": "/compte/connexion/", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-09-25 08:52:49,427] INFO | "GET /compte/connexion/ HTTP/1.1" 200 3943
+[2025-09-25 08:52:54,384] INFO | Début de requête: {"method": "GET", "path": "/compte/inscription/", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-09-25 08:52:54,403] INFO | Fin de requête: {"status_code": 200, "duration": "0.0204 secondes", "method": "GET", "path": "/compte/inscription/", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-09-25 08:52:54,405] INFO | "GET /compte/inscription/ HTTP/1.1" 200 4343
+[2025-09-25 08:53:03,181] INFO | Début de requête: {"method": "GET", "path": "/compte/connexion/", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-09-25 08:53:03,192] INFO | Fin de requête: {"status_code": 200, "duration": "0.0107 secondes", "method": "GET", "path": "/compte/connexion/", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-09-25 08:53:03,194] INFO | "GET /compte/connexion/ HTTP/1.1" 200 3943
+[2025-09-25 08:53:10,872] INFO | Début de requête: {"method": "POST", "path": "/compte/connexion/", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-09-25 08:53:11,779] INFO | Fin de requête: {"status_code": 200, "duration": "0.9071 secondes", "method": "POST", "path": "/compte/connexion/", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-09-25 08:53:11,780] INFO | "POST /compte/connexion/ HTTP/1.1" 200 4177
+[2025-09-25 08:53:21,588] INFO | Début de requête: {"method": "POST", "path": "/compte/connexion/", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-09-25 08:53:22,379] INFO | Fin de requête: {"status_code": 200, "duration": "0.7911 secondes", "method": "POST", "path": "/compte/connexion/", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-09-25 08:53:22,380] INFO | "POST /compte/connexion/ HTTP/1.1" 200 4177
+[2025-09-25 08:53:28,811] INFO | Début de requête: {"method": "POST", "path": "/compte/connexion/", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-09-25 08:53:29,651] INFO | Fin de requête: {"status_code": 200, "duration": "0.8400 secondes", "method": "POST", "path": "/compte/connexion/", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-09-25 08:53:29,652] INFO | "POST /compte/connexion/ HTTP/1.1" 200 4177
+[2025-09-25 08:53:40,133] INFO | Début de requête: {"method": "GET", "path": "/compte/inscription/", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-09-25 08:53:40,147] INFO | Fin de requête: {"status_code": 200, "duration": "0.0149 secondes", "method": "GET", "path": "/compte/inscription/", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-09-25 08:53:40,149] INFO | "GET /compte/inscription/ HTTP/1.1" 200 4343
+[2025-09-25 08:53:50,738] INFO | Début de requête: {"method": "GET", "path": "/compte/connexion/", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-09-25 08:53:50,746] INFO | Fin de requête: {"status_code": 200, "duration": "0.0086 secondes", "method": "GET", "path": "/compte/connexion/", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-09-25 08:53:50,748] INFO | "GET /compte/connexion/ HTTP/1.1" 200 3943
+[2025-09-25 08:53:52,576] INFO | Début de requête: {"method": "GET", "path": "/compte/mot-de-passe-oublie/", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-09-25 08:53:52,583] INFO | Fin de requête: {"status_code": 200, "duration": "0.0073 secondes", "method": "GET", "path": "/compte/mot-de-passe-oublie/", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-09-25 08:53:52,585] INFO | "GET /compte/mot-de-passe-oublie/ HTTP/1.1" 200 3733
+[2025-09-25 08:53:56,360] INFO | Début de requête: {"method": "POST", "path": "/compte/mot-de-passe-oublie/", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-09-25 08:54:17,458] ERROR | Failed to send password reset email to 1
+Traceback (most recent call last):
+  File "C:\Users\shile\Dropbox\PC\Documents\BTS_SIO_23_25\Restau\restaurant_project\env\Lib\site-packages\django\contrib\auth\forms.py", line 431, in send_mail
+    email_message.send()
+  File "C:\Users\shile\Dropbox\PC\Documents\BTS_SIO_23_25\Restau\restaurant_project\env\Lib\site-packages\django\core\mail\message.py", line 301, in send
+    return self.get_connection(fail_silently).send_messages([self])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shile\Dropbox\PC\Documents\BTS_SIO_23_25\Restau\restaurant_project\env\Lib\site-packages\django\core\mail\backends\smtp.py", line 128, in send_messages
+    new_conn_created = self.open()
+                       ^^^^^^^^^^^
+  File "C:\Users\shile\Dropbox\PC\Documents\BTS_SIO_23_25\Restau\restaurant_project\env\Lib\site-packages\django\core\mail\backends\smtp.py", line 86, in open
+    self.connection = self.connection_class(
+                      ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shile\python\Lib\smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shile\python\Lib\smtplib.py", line 341, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shile\python\Lib\smtplib.py", line 312, in _get_socket
+    return socket.create_connection((host, port), timeout,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shile\python\Lib\socket.py", line 852, in create_connection
+    raise exceptions[0]
+  File "C:\Users\shile\python\Lib\socket.py", line 837, in create_connection
+    sock.connect(sa)
+TimeoutError: [WinError 10060] Une tentative de connexion a échoué car le parti connecté n’a pas répondu convenablement au-delà d’une certaine durée ou une connexion établie a échoué car l’hôte de connexion n’a pas répondu
+[2025-09-25 08:54:38,517] ERROR | Failed to send password reset email to 5
+Traceback (most recent call last):
+  File "C:\Users\shile\Dropbox\PC\Documents\BTS_SIO_23_25\Restau\restaurant_project\env\Lib\site-packages\django\contrib\auth\forms.py", line 431, in send_mail
+    email_message.send()
+  File "C:\Users\shile\Dropbox\PC\Documents\BTS_SIO_23_25\Restau\restaurant_project\env\Lib\site-packages\django\core\mail\message.py", line 301, in send
+    return self.get_connection(fail_silently).send_messages([self])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shile\Dropbox\PC\Documents\BTS_SIO_23_25\Restau\restaurant_project\env\Lib\site-packages\django\core\mail\backends\smtp.py", line 128, in send_messages
+    new_conn_created = self.open()
+                       ^^^^^^^^^^^
+  File "C:\Users\shile\Dropbox\PC\Documents\BTS_SIO_23_25\Restau\restaurant_project\env\Lib\site-packages\django\core\mail\backends\smtp.py", line 86, in open
+    self.connection = self.connection_class(
+                      ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shile\python\Lib\smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shile\python\Lib\smtplib.py", line 341, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shile\python\Lib\smtplib.py", line 312, in _get_socket
+    return socket.create_connection((host, port), timeout,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shile\python\Lib\socket.py", line 852, in create_connection
+    raise exceptions[0]
+  File "C:\Users\shile\python\Lib\socket.py", line 837, in create_connection
+    sock.connect(sa)
+TimeoutError: [WinError 10060] Une tentative de connexion a échoué car le parti connecté n’a pas répondu convenablement au-delà d’une certaine durée ou une connexion établie a échoué car l’hôte de connexion n’a pas répondu
+[2025-09-25 08:54:38,519] INFO | Fin de requête: {"status_code": 302, "duration": "42.1586 secondes", "method": "POST", "path": "/compte/mot-de-passe-oublie/", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-09-25 08:54:38,519] INFO | "POST /compte/mot-de-passe-oublie/ HTTP/1.1" 302 0
+[2025-09-25 08:54:38,524] INFO | Début de requête: {"method": "GET", "path": "/compte/mot-de-passe-envoye/", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-09-25 08:54:38,527] INFO | Fin de requête: {"status_code": 200, "duration": "0.0030 secondes", "method": "GET", "path": "/compte/mot-de-passe-envoye/", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-09-25 08:54:38,527] INFO | "GET /compte/mot-de-passe-envoye/ HTTP/1.1" 200 3397
+[2025-09-25 08:54:44,060] INFO | Début de requête: {"method": "GET", "path": "/compte/connexion/", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-09-25 08:54:44,073] INFO | Fin de requête: {"status_code": 200, "duration": "0.0126 secondes", "method": "GET", "path": "/compte/connexion/", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-09-25 08:54:44,078] INFO | "GET /compte/connexion/ HTTP/1.1" 200 3943

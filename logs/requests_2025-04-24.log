@@ -1,0 +1,393 @@
+[2025-04-24 22:13:02,116] INFO | Watching for file changes with StatReloader
+[2025-04-24 22:13:23,911] INFO | Début de requête: {"method": "GET", "path": "/", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:13:23,965] INFO | Fin de requête: {"status_code": 200, "duration": "0.0582 secondes", "method": "GET", "path": "/", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:13:23,967] INFO | "GET / HTTP/1.1" 200 8821
+[2025-04-24 22:13:24,136] INFO | "GET /static/img/sushi.jpeg HTTP/1.1" 304 0
+[2025-04-24 22:13:24,137] INFO | "GET /static/img/Ramen.jpg HTTP/1.1" 304 0
+[2025-04-24 22:13:24,290] INFO | "GET /static/img/c.jpg HTTP/1.1" 304 0
+[2025-04-24 22:13:24,290] INFO | "GET /static/img/menu.jpg HTTP/1.1" 304 0
+[2025-04-24 22:13:24,302] INFO | "GET /static/img/magi.jpg HTTP/1.1" 304 0
+[2025-04-24 22:13:24,303] INFO | "GET /static/img/bateau.jpg HTTP/1.1" 304 0
+[2025-04-24 22:13:24,306] INFO | "GET /static/img/1.png HTTP/1.1" 304 0
+[2025-04-24 22:13:24,306] INFO | "GET /static/img/Saumon.png HTTP/1.1" 304 0
+[2025-04-24 22:16:22,931] INFO | Début de requête: {"method": "GET", "path": "/", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:22,935] INFO | Fin de requête: {"status_code": 200, "duration": "0.0040 secondes", "method": "GET", "path": "/", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:22,939] INFO | "GET / HTTP/1.1" 200 8821
+[2025-04-24 22:16:24,550] INFO | Début de requête: {"method": "GET", "path": "/menu/promotions/", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:24,566] INFO | Fin de requête: {"status_code": 200, "duration": "0.0155 secondes", "method": "GET", "path": "/menu/promotions/", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:24,567] INFO | "GET /menu/promotions/ HTTP/1.1" 200 5971
+[2025-04-24 22:16:24,619] INFO | Début de requête: {"method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_154354.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:24,620] INFO | Début de requête: {"method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_152759.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:24,696] INFO | Début de requête: {"method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_155630.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:24,697] INFO | Début de requête: {"method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_152624.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:24,895] INFO | Fin de requête: {"status_code": 200, "duration": "0.2760 secondes", "method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_154354.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:24,902] INFO | Fin de requête: {"status_code": 200, "duration": "0.2820 secondes", "method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_152759.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:24,905] INFO | "GET /media/plats/Capture_d%C3%A9cran_2025-04-07_154354.png HTTP/1.1" 200 259708
+[2025-04-24 22:16:24,909] INFO | "GET /media/plats/Capture_d%C3%A9cran_2025-04-07_152759.png HTTP/1.1" 200 253925
+[2025-04-24 22:16:24,920] INFO | Fin de requête: {"status_code": 200, "duration": "0.2230 secondes", "method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_152624.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:24,922] INFO | Fin de requête: {"status_code": 200, "duration": "0.2260 secondes", "method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_155630.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:24,929] INFO | "GET /media/plats/Capture_d%C3%A9cran_2025-04-07_155630.png HTTP/1.1" 200 175300
+[2025-04-24 22:16:24,930] INFO | "GET /media/plats/Capture_d%C3%A9cran_2025-04-07_152624.png HTTP/1.1" 200 280438
+[2025-04-24 22:16:32,748] INFO | Début de requête: {"method": "GET", "path": "/menu/", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:32,918] INFO | Fin de requête: {"status_code": 200, "duration": "0.1700 secondes", "method": "GET", "path": "/menu/", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:32,919] INFO | "GET /menu/ HTTP/1.1" 200 168075
+[2025-04-24 22:16:32,965] INFO | Début de requête: {"method": "GET", "path": "/media/plats/t\u00e9l\u00e9chargement_1.jpg", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:32,966] INFO | Début de requête: {"method": "GET", "path": "/media/plats/t\u00e9l\u00e9chargement_2.jpg", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:32,968] INFO | Fin de requête: {"status_code": 200, "duration": "0.0020 secondes", "method": "GET", "path": "/media/plats/t\u00e9l\u00e9chargement_2.jpg", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:32,969] INFO | Fin de requête: {"status_code": 200, "duration": "0.0040 secondes", "method": "GET", "path": "/media/plats/t\u00e9l\u00e9chargement_1.jpg", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:32,969] INFO | "GET /media/plats/t%C3%A9l%C3%A9chargement_2.jpg HTTP/1.1" 200 10849
+[2025-04-24 22:16:32,971] INFO | "GET /media/plats/t%C3%A9l%C3%A9chargement_1.jpg HTTP/1.1" 200 6643
+[2025-04-24 22:16:33,007] INFO | Début de requête: {"method": "GET", "path": "/media/plats/t\u00e9l\u00e9chargement_3.jpg", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,009] INFO | Fin de requête: {"status_code": 200, "duration": "0.0020 secondes", "method": "GET", "path": "/media/plats/t\u00e9l\u00e9chargement_3.jpg", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,010] INFO | "GET /media/plats/t%C3%A9l%C3%A9chargement_3.jpg HTTP/1.1" 200 6854
+[2025-04-24 22:16:33,023] INFO | Début de requête: {"method": "GET", "path": "/media/plats/t\u00e9l\u00e9chargement_4.jpg", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,024] INFO | Début de requête: {"method": "GET", "path": "/media/plats/t\u00e9l\u00e9chargement_5.jpg", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,025] INFO | Début de requête: {"method": "GET", "path": "/media/plats/images.jpg", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,027] INFO | Début de requête: {"method": "GET", "path": "/media/plats/images_1.jpg", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,028] INFO | Début de requête: {"method": "GET", "path": "/media/plats/t\u00e9l\u00e9chargement_6.jpg", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,030] INFO | Début de requête: {"method": "GET", "path": "/media/plats/t\u00e9l\u00e9chargement_7.jpg", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,032] INFO | Fin de requête: {"status_code": 200, "duration": "0.0080 secondes", "method": "GET", "path": "/media/plats/t\u00e9l\u00e9chargement_5.jpg", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,032] INFO | Fin de requête: {"status_code": 200, "duration": "0.0070 secondes", "method": "GET", "path": "/media/plats/images.jpg", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,033] INFO | Fin de requête: {"status_code": 200, "duration": "0.0100 secondes", "method": "GET", "path": "/media/plats/t\u00e9l\u00e9chargement_4.jpg", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,034] INFO | Fin de requête: {"status_code": 200, "duration": "0.0070 secondes", "method": "GET", "path": "/media/plats/images_1.jpg", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,035] INFO | Fin de requête: {"status_code": 200, "duration": "0.0060 secondes", "method": "GET", "path": "/media/plats/t\u00e9l\u00e9chargement_6.jpg", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,035] INFO | Fin de requête: {"status_code": 200, "duration": "0.0050 secondes", "method": "GET", "path": "/media/plats/t\u00e9l\u00e9chargement_7.jpg", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,036] INFO | "GET /media/plats/t%C3%A9l%C3%A9chargement_5.jpg HTTP/1.1" 200 7686
+[2025-04-24 22:16:33,038] INFO | "GET /media/plats/images.jpg HTTP/1.1" 200 8490
+[2025-04-24 22:16:33,039] INFO | "GET /media/plats/images_1.jpg HTTP/1.1" 200 8289
+[2025-04-24 22:16:33,039] INFO | "GET /media/plats/t%C3%A9l%C3%A9chargement_4.jpg HTTP/1.1" 200 12492
+[2025-04-24 22:16:33,041] INFO | "GET /media/plats/t%C3%A9l%C3%A9chargement_6.jpg HTTP/1.1" 200 8012
+[2025-04-24 22:16:33,043] INFO | Début de requête: {"method": "GET", "path": "/media/plats/t\u00e9l\u00e9chargement_8.jpg", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,044] INFO | "GET /media/plats/t%C3%A9l%C3%A9chargement_7.jpg HTTP/1.1" 200 11569
+[2025-04-24 22:16:33,046] INFO | Début de requête: {"method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_143323.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,047] INFO | Fin de requête: {"status_code": 200, "duration": "0.0040 secondes", "method": "GET", "path": "/media/plats/t\u00e9l\u00e9chargement_8.jpg", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,048] INFO | Fin de requête: {"status_code": 200, "duration": "0.0020 secondes", "method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_143323.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,051] INFO | Début de requête: {"method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_143504.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,052] INFO | Début de requête: {"method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_143729.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,054] INFO | Début de requête: {"method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_143810.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,055] INFO | Début de requête: {"method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_143920.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,058] INFO | "GET /media/plats/t%C3%A9l%C3%A9chargement_8.jpg HTTP/1.1" 200 10923
+[2025-04-24 22:16:33,062] INFO | Début de requête: {"method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_144023.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,063] INFO | Fin de requête: {"status_code": 200, "duration": "0.0090 secondes", "method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_143810.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,064] INFO | Fin de requête: {"status_code": 200, "duration": "0.0120 secondes", "method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_143729.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,064] INFO | Fin de requête: {"status_code": 200, "duration": "0.0130 secondes", "method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_143504.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,065] INFO | Fin de requête: {"status_code": 200, "duration": "0.0100 secondes", "method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_143920.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,077] INFO | Fin de requête: {"status_code": 200, "duration": "0.0150 secondes", "method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_144023.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,085] INFO | "GET /media/plats/Capture_d%C3%A9cran_2025-04-07_143729.png HTTP/1.1" 200 75931
+[2025-04-24 22:16:33,086] INFO | "GET /media/plats/Capture_d%C3%A9cran_2025-04-07_143323.png HTTP/1.1" 200 137036
+[2025-04-24 22:16:33,090] INFO | "GET /media/plats/Capture_d%C3%A9cran_2025-04-07_143504.png HTTP/1.1" 200 113435
+[2025-04-24 22:16:33,091] INFO | "GET /media/plats/Capture_d%C3%A9cran_2025-04-07_143810.png HTTP/1.1" 200 134371
+[2025-04-24 22:16:33,093] INFO | "GET /media/plats/Capture_d%C3%A9cran_2025-04-07_143920.png HTTP/1.1" 200 154854
+[2025-04-24 22:16:33,094] INFO | "GET /media/plats/Capture_d%C3%A9cran_2025-04-07_144023.png HTTP/1.1" 200 157117
+[2025-04-24 22:16:33,123] INFO | Début de requête: {"method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_144147.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,126] INFO | Fin de requête: {"status_code": 200, "duration": "0.0030 secondes", "method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_144147.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,132] INFO | Début de requête: {"method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_144245.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,133] INFO | Début de requête: {"method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_144415.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,134] INFO | Début de requête: {"method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_145034.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,137] INFO | Fin de requête: {"status_code": 200, "duration": "0.0040 secondes", "method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_144415.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,137] INFO | Fin de requête: {"status_code": 200, "duration": "0.0030 secondes", "method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_145034.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,138] INFO | Fin de requête: {"status_code": 200, "duration": "0.0060 secondes", "method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_144245.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,141] INFO | Début de requête: {"method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_145140.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,143] INFO | Début de requête: {"method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_145649.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,145] INFO | Fin de requête: {"status_code": 200, "duration": "0.0020 secondes", "method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_145649.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,150] INFO | Fin de requête: {"status_code": 200, "duration": "0.0090 secondes", "method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_145140.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,152] INFO | "GET /media/plats/Capture_d%C3%A9cran_2025-04-07_144147.png HTTP/1.1" 200 220478
+[2025-04-24 22:16:33,159] INFO | "GET /media/plats/Capture_d%C3%A9cran_2025-04-07_144415.png HTTP/1.1" 200 186330
+[2025-04-24 22:16:33,160] INFO | "GET /media/plats/Capture_d%C3%A9cran_2025-04-07_145034.png HTTP/1.1" 200 158470
+[2025-04-24 22:16:33,162] INFO | "GET /media/plats/Capture_d%C3%A9cran_2025-04-07_145649.png HTTP/1.1" 200 162913
+[2025-04-24 22:16:33,163] INFO | "GET /media/plats/Capture_d%C3%A9cran_2025-04-07_145140.png HTTP/1.1" 200 164670
+[2025-04-24 22:16:33,164] INFO | "GET /media/plats/Capture_d%C3%A9cran_2025-04-07_144245.png HTTP/1.1" 200 196872
+[2025-04-24 22:16:33,167] INFO | Début de requête: {"method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_145811.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,171] INFO | Fin de requête: {"status_code": 200, "duration": "0.0040 secondes", "method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_145811.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,184] INFO | Début de requête: {"method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_150740.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,185] INFO | Début de requête: {"method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_150838.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,187] INFO | Fin de requête: {"status_code": 200, "duration": "0.0030 secondes", "method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_150740.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,188] INFO | Fin de requête: {"status_code": 200, "duration": "0.0030 secondes", "method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_150838.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,188] INFO | Début de requête: {"method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_150938.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,190] INFO | "GET /media/plats/Capture_d%C3%A9cran_2025-04-07_145811.png HTTP/1.1" 200 191300
+[2025-04-24 22:16:33,191] INFO | Début de requête: {"method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_151206.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,193] INFO | Début de requête: {"method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_152248.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,195] INFO | Fin de requête: {"status_code": 200, "duration": "0.0070 secondes", "method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_150938.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,197] INFO | Fin de requête: {"status_code": 200, "duration": "0.0060 secondes", "method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_151206.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,199] INFO | Fin de requête: {"status_code": 200, "duration": "0.0060 secondes", "method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_152248.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,202] INFO | Début de requête: {"method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_152248_rc8FNj8.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,205] INFO | Fin de requête: {"status_code": 200, "duration": "0.0030 secondes", "method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_152248_rc8FNj8.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,209] INFO | "GET /media/plats/Capture_d%C3%A9cran_2025-04-07_150740.png HTTP/1.1" 200 149692
+[2025-04-24 22:16:33,210] INFO | "GET /media/plats/Capture_d%C3%A9cran_2025-04-07_150838.png HTTP/1.1" 200 158918
+[2025-04-24 22:16:33,215] INFO | "GET /media/plats/Capture_d%C3%A9cran_2025-04-07_152248_rc8FNj8.png HTTP/1.1" 200 230063
+[2025-04-24 22:16:33,217] INFO | "GET /media/plats/Capture_d%C3%A9cran_2025-04-07_151206.png HTTP/1.1" 200 267247
+[2025-04-24 22:16:33,218] INFO | "GET /media/plats/Capture_d%C3%A9cran_2025-04-07_150938.png HTTP/1.1" 200 286034
+[2025-04-24 22:16:33,220] INFO | "GET /media/plats/Capture_d%C3%A9cran_2025-04-07_152248.png HTTP/1.1" 200 230063
+[2025-04-24 22:16:33,227] INFO | Début de requête: {"method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_152402.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,230] INFO | Début de requête: {"method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_153036.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,231] INFO | Fin de requête: {"status_code": 200, "duration": "0.0040 secondes", "method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_152402.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,232] INFO | Fin de requête: {"status_code": 200, "duration": "0.0020 secondes", "method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_153036.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,238] INFO | "GET /media/plats/Capture_d%C3%A9cran_2025-04-07_153036.png HTTP/1.1" 200 264567
+[2025-04-24 22:16:33,242] INFO | Début de requête: {"method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_153224.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,243] INFO | Début de requête: {"method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_153334.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,244] INFO | Début de requête: {"method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_153439.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,246] INFO | Début de requête: {"method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_153635.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,249] INFO | Fin de requête: {"status_code": 200, "duration": "0.0060 secondes", "method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_153224.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,249] INFO | Fin de requête: {"status_code": 200, "duration": "0.0050 secondes", "method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_153439.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,250] INFO | Fin de requête: {"status_code": 200, "duration": "0.0040 secondes", "method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_153635.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,251] INFO | Fin de requête: {"status_code": 200, "duration": "0.0080 secondes", "method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_153334.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,253] INFO | Début de requête: {"method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_154237.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,254] INFO | "GET /media/plats/Capture_d%C3%A9cran_2025-04-07_152402.png HTTP/1.1" 200 257777
+[2025-04-24 22:16:33,256] INFO | Fin de requête: {"status_code": 200, "duration": "0.0040 secondes", "method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_154237.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,262] INFO | "GET /media/plats/Capture_d%C3%A9cran_2025-04-07_153224.png HTTP/1.1" 200 171985
+[2025-04-24 22:16:33,265] INFO | "GET /media/plats/Capture_d%C3%A9cran_2025-04-07_153439.png HTTP/1.1" 200 298220
+[2025-04-24 22:16:33,267] INFO | "GET /media/plats/Capture_d%C3%A9cran_2025-04-07_153635.png HTTP/1.1" 200 259943
+[2025-04-24 22:16:33,268] INFO | "GET /media/plats/Capture_d%C3%A9cran_2025-04-07_154237.png HTTP/1.1" 200 272032
+[2025-04-24 22:16:33,269] INFO | "GET /media/plats/Capture_d%C3%A9cran_2025-04-07_153334.png HTTP/1.1" 200 291548
+[2025-04-24 22:16:33,271] INFO | Début de requête: {"method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_153826.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,275] INFO | Fin de requête: {"status_code": 200, "duration": "0.0040 secondes", "method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_153826.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,292] INFO | Début de requête: {"method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_153920.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,293] INFO | Début de requête: {"method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_154114.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,296] INFO | Début de requête: {"method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_154500.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,297] INFO | Début de requête: {"method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_154603.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,299] INFO | Début de requête: {"method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_154718.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,300] INFO | Fin de requête: {"status_code": 200, "duration": "0.0090 secondes", "method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_153920.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,302] INFO | Fin de requête: {"status_code": 200, "duration": "0.0090 secondes", "method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_154114.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,303] INFO | "GET /media/plats/Capture_d%C3%A9cran_2025-04-07_153826.png HTTP/1.1" 200 234895
+[2025-04-24 22:16:33,304] INFO | Fin de requête: {"status_code": 200, "duration": "0.0070 secondes", "method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_154500.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,304] INFO | Fin de requête: {"status_code": 200, "duration": "0.0070 secondes", "method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_154603.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,305] INFO | Fin de requête: {"status_code": 200, "duration": "0.0060 secondes", "method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_154718.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,318] INFO | Début de requête: {"method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_154840.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,322] INFO | "GET /media/plats/Capture_d%C3%A9cran_2025-04-07_153920.png HTTP/1.1" 200 261129
+[2025-04-24 22:16:33,323] INFO | Fin de requête: {"status_code": 200, "duration": "0.0060 secondes", "method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_154840.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,325] INFO | "GET /media/plats/Capture_d%C3%A9cran_2025-04-07_154603.png HTTP/1.1" 200 255452
+[2025-04-24 22:16:33,327] INFO | "GET /media/plats/Capture_d%C3%A9cran_2025-04-07_154114.png HTTP/1.1" 200 261487
+[2025-04-24 22:16:33,330] INFO | "GET /media/plats/Capture_d%C3%A9cran_2025-04-07_154500.png HTTP/1.1" 200 283495
+[2025-04-24 22:16:33,331] INFO | "GET /media/plats/Capture_d%C3%A9cran_2025-04-07_154718.png HTTP/1.1" 200 259463
+[2025-04-24 22:16:33,336] INFO | "GET /media/plats/Capture_d%C3%A9cran_2025-04-07_154840.png HTTP/1.1" 200 264378
+[2025-04-24 22:16:33,348] INFO | Début de requête: {"method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_155210.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,349] INFO | Début de requête: {"method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_154929.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,350] INFO | Début de requête: {"method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_155736.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,351] INFO | Début de requête: {"method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_155829.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,353] INFO | Fin de requête: {"status_code": 200, "duration": "0.0050 secondes", "method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_155210.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,354] INFO | Fin de requête: {"status_code": 200, "duration": "0.0050 secondes", "method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_154929.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,354] INFO | Fin de requête: {"status_code": 200, "duration": "0.0030 secondes", "method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_155829.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,355] INFO | Fin de requête: {"status_code": 200, "duration": "0.0060 secondes", "method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_155736.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,364] INFO | Début de requête: {"method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_155913.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,365] INFO | Début de requête: {"method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_160039.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,368] INFO | Fin de requête: {"status_code": 200, "duration": "0.0030 secondes", "method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_160039.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,369] INFO | Fin de requête: {"status_code": 200, "duration": "0.0050 secondes", "method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_155913.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,370] INFO | "GET /media/plats/Capture_d%C3%A9cran_2025-04-07_155829.png HTTP/1.1" 200 186472
+[2025-04-24 22:16:33,371] INFO | "GET /media/plats/Capture_d%C3%A9cran_2025-04-07_155210.png HTTP/1.1" 200 175108
+[2025-04-24 22:16:33,375] INFO | "GET /media/plats/Capture_d%C3%A9cran_2025-04-07_155736.png HTTP/1.1" 200 143075
+[2025-04-24 22:16:33,376] INFO | "GET /media/plats/Capture_d%C3%A9cran_2025-04-07_154929.png HTTP/1.1" 200 272580
+[2025-04-24 22:16:33,381] INFO | "GET /media/plats/Capture_d%C3%A9cran_2025-04-07_155913.png HTTP/1.1" 200 159945
+[2025-04-24 22:16:33,382] INFO | "GET /media/plats/Capture_d%C3%A9cran_2025-04-07_160039.png HTTP/1.1" 200 220138
+[2025-04-24 22:16:33,386] INFO | Début de requête: {"method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_160105.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,387] INFO | Début de requête: {"method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_160226.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,389] INFO | Fin de requête: {"status_code": 200, "duration": "0.0030 secondes", "method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_160105.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,390] INFO | Fin de requête: {"status_code": 200, "duration": "0.0030 secondes", "method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_160226.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,391] INFO | Début de requête: {"method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_160335.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,395] INFO | Fin de requête: {"status_code": 200, "duration": "0.0040 secondes", "method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_160335.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,400] INFO | Début de requête: {"method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_160548.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,401] INFO | Début de requête: {"method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_160844.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,405] INFO | Fin de requête: {"status_code": 200, "duration": "0.0040 secondes", "method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_160844.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,406] INFO | "GET /media/plats/Capture_d%C3%A9cran_2025-04-07_160105.png HTTP/1.1" 200 209566
+[2025-04-24 22:16:33,408] INFO | "GET /media/plats/Capture_d%C3%A9cran_2025-04-07_160226.png HTTP/1.1" 200 246880
+[2025-04-24 22:16:33,410] INFO | Fin de requête: {"status_code": 200, "duration": "0.0100 secondes", "method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_160548.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,413] INFO | Début de requête: {"method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_160919.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,415] INFO | "GET /media/plats/Capture_d%C3%A9cran_2025-04-07_160335.png HTTP/1.1" 200 213762
+[2025-04-24 22:16:33,416] INFO | Fin de requête: {"status_code": 200, "duration": "0.0030 secondes", "method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_160919.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,420] INFO | "GET /media/plats/Capture_d%C3%A9cran_2025-04-07_160844.png HTTP/1.1" 200 181373
+[2025-04-24 22:16:33,421] INFO | "GET /media/plats/Capture_d%C3%A9cran_2025-04-07_160548.png HTTP/1.1" 200 188445
+[2025-04-24 22:16:33,425] INFO | "GET /media/plats/Capture_d%C3%A9cran_2025-04-07_160919.png HTTP/1.1" 200 195911
+[2025-04-24 22:16:33,433] INFO | Début de requête: {"method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_161010.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,434] INFO | Début de requête: {"method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_161237.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,435] INFO | Début de requête: {"method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_161333.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,439] INFO | Fin de requête: {"status_code": 200, "duration": "0.0060 secondes", "method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_161010.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,439] INFO | Fin de requête: {"status_code": 200, "duration": "0.0050 secondes", "method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_161237.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,440] INFO | Fin de requête: {"status_code": 200, "duration": "0.0040 secondes", "method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_161333.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,446] INFO | "GET /media/plats/Capture_d%C3%A9cran_2025-04-07_161333.png HTTP/1.1" 200 206168
+[2025-04-24 22:16:33,448] INFO | Début de requête: {"method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_161455.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,450] INFO | Début de requête: {"method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_161617.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,452] INFO | Fin de requête: {"status_code": 200, "duration": "0.0040 secondes", "method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_161455.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,453] INFO | Fin de requête: {"status_code": 200, "duration": "0.0030 secondes", "method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_161617.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,454] INFO | "GET /media/plats/Capture_d%C3%A9cran_2025-04-07_161010.png HTTP/1.1" 200 165945
+[2025-04-24 22:16:33,454] INFO | "GET /media/plats/Capture_d%C3%A9cran_2025-04-07_161237.png HTTP/1.1" 200 256274
+[2025-04-24 22:16:33,458] INFO | Début de requête: {"method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_161735.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,459] INFO | "GET /media/plats/Capture_d%C3%A9cran_2025-04-07_161617.png HTTP/1.1" 200 107170
+[2025-04-24 22:16:33,461] INFO | "GET /media/plats/Capture_d%C3%A9cran_2025-04-07_161455.png HTTP/1.1" 200 129270
+[2025-04-24 22:16:33,464] INFO | Fin de requête: {"status_code": 200, "duration": "0.0070 secondes", "method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_161735.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,472] INFO | "GET /media/plats/Capture_d%C3%A9cran_2025-04-07_161735.png HTTP/1.1" 200 119424
+[2025-04-24 22:16:33,483] INFO | Début de requête: {"method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_163352_WXhbMPu.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,484] INFO | Début de requête: {"method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_164332.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,485] INFO | Début de requête: {"method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_165441.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,487] INFO | Début de requête: {"method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_164524.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,488] INFO | Début de requête: {"method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_165525.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,492] INFO | Fin de requête: {"status_code": 200, "duration": "0.0085 secondes", "method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_163352_WXhbMPu.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,493] INFO | Fin de requête: {"status_code": 200, "duration": "0.0075 secondes", "method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_165441.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,494] INFO | Fin de requête: {"status_code": 200, "duration": "0.0075 secondes", "method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_164524.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,495] INFO | Fin de requête: {"status_code": 200, "duration": "0.0105 secondes", "method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_164332.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,496] INFO | Fin de requête: {"status_code": 200, "duration": "0.0075 secondes", "method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_165525.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,502] INFO | "GET /media/plats/Capture_d%C3%A9cran_2025-04-07_164524.png HTTP/1.1" 200 99393
+[2025-04-24 22:16:33,503] INFO | "GET /media/plats/Capture_d%C3%A9cran_2025-04-07_163352_WXhbMPu.png HTTP/1.1" 200 77213
+[2025-04-24 22:16:33,504] INFO | "GET /media/plats/Capture_d%C3%A9cran_2025-04-07_165441.png HTTP/1.1" 200 96485
+[2025-04-24 22:16:33,508] INFO | "GET /media/plats/Capture_d%C3%A9cran_2025-04-07_164332.png HTTP/1.1" 200 61310
+[2025-04-24 22:16:33,509] INFO | "GET /media/plats/Capture_d%C3%A9cran_2025-04-07_165525.png HTTP/1.1" 200 87563
+[2025-04-24 22:16:33,519] INFO | Début de requête: {"method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_164647.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,523] INFO | Fin de requête: {"status_code": 200, "duration": "0.0030 secondes", "method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_164647.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,528] INFO | "GET /media/plats/Capture_d%C3%A9cran_2025-04-07_164647.png HTTP/1.1" 200 53945
+[2025-04-24 22:16:33,534] INFO | Début de requête: {"method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_164814.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,536] INFO | Début de requête: {"method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_164837.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,537] INFO | Début de requête: {"method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_165228.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,538] INFO | Début de requête: {"method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_165248.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,538] INFO | Début de requête: {"method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_165331.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,543] INFO | Fin de requête: {"status_code": 200, "duration": "0.0090 secondes", "method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_164814.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,543] INFO | Début de requête: {"method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_205246.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,544] INFO | Fin de requête: {"status_code": 200, "duration": "0.0080 secondes", "method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_165228.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,545] INFO | Fin de requête: {"status_code": 200, "duration": "0.0070 secondes", "method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_165248.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,545] INFO | Fin de requête: {"status_code": 200, "duration": "0.0070 secondes", "method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_165331.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,547] INFO | Fin de requête: {"status_code": 200, "duration": "0.0110 secondes", "method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_164837.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,549] INFO | Fin de requête: {"status_code": 200, "duration": "0.0060 secondes", "method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_205246.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,556] INFO | "GET /media/plats/Capture_d%C3%A9cran_2025-04-07_165228.png HTTP/1.1" 200 57601
+[2025-04-24 22:16:33,557] INFO | "GET /media/plats/Capture_d%C3%A9cran_2025-04-07_165248.png HTTP/1.1" 200 61568
+[2025-04-24 22:16:33,560] INFO | "GET /media/plats/Capture_d%C3%A9cran_2025-04-07_164814.png HTTP/1.1" 200 59323
+[2025-04-24 22:16:33,560] INFO | "GET /media/plats/Capture_d%C3%A9cran_2025-04-07_165331.png HTTP/1.1" 200 60961
+[2025-04-24 22:16:33,562] INFO | "GET /media/plats/Capture_d%C3%A9cran_2025-04-07_164837.png HTTP/1.1" 200 79038
+[2025-04-24 22:16:33,571] INFO | "GET /media/plats/Capture_d%C3%A9cran_2025-04-07_205246.png HTTP/1.1" 200 152997
+[2025-04-24 22:16:33,577] INFO | Début de requête: {"method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_205312.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,579] INFO | Début de requête: {"method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_205431.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,584] INFO | Début de requête: {"method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_205508.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,586] INFO | Fin de requête: {"status_code": 200, "duration": "0.0090 secondes", "method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_205312.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,588] INFO | Fin de requête: {"status_code": 200, "duration": "0.0100 secondes", "method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_205431.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,590] INFO | Début de requête: {"method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_205500.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,592] INFO | Fin de requête: {"status_code": 200, "duration": "0.0080 secondes", "method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_205508.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,598] INFO | Fin de requête: {"status_code": 200, "duration": "0.0080 secondes", "method": "GET", "path": "/media/plats/Capture_d\u00e9cran_2025-04-07_205500.png", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:16:33,602] INFO | "GET /media/plats/Capture_d%C3%A9cran_2025-04-07_205431.png HTTP/1.1" 200 80200
+[2025-04-24 22:16:33,602] INFO | "GET /media/plats/Capture_d%C3%A9cran_2025-04-07_205312.png HTTP/1.1" 200 96700
+[2025-04-24 22:16:33,606] INFO | "GET /media/plats/Capture_d%C3%A9cran_2025-04-07_205500.png HTTP/1.1" 200 119538
+[2025-04-24 22:16:33,607] INFO | "GET /media/plats/Capture_d%C3%A9cran_2025-04-07_205508.png HTTP/1.1" 200 123715
+[2025-04-24 22:17:14,785] INFO | Début de requête: {"method": "GET", "path": "/menu/", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:17:14,830] INFO | Fin de requête: {"status_code": 200, "duration": "0.0450 secondes", "method": "GET", "path": "/menu/", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:17:14,832] INFO | "GET /menu/?categorie=7 HTTP/1.1" 200 26415
+[2025-04-24 22:17:17,081] INFO | Début de requête: {"method": "GET", "path": "/menu/", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:17:17,188] INFO | Fin de requête: {"status_code": 200, "duration": "0.1070 secondes", "method": "GET", "path": "/menu/", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:17:17,190] INFO | "GET /menu/?categorie=8 HTTP/1.1" 200 84463
+[2025-04-24 22:17:18,149] INFO | Début de requête: {"method": "GET", "path": "/menu/", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:17:18,167] INFO | Fin de requête: {"status_code": 200, "duration": "0.0180 secondes", "method": "GET", "path": "/menu/", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:17:18,168] INFO | "GET /menu/?categorie=9 HTTP/1.1" 200 14515
+[2025-04-24 22:17:19,095] INFO | Début de requête: {"method": "GET", "path": "/menu/", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:17:19,113] INFO | Fin de requête: {"status_code": 200, "duration": "0.0190 secondes", "method": "GET", "path": "/menu/", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:17:19,114] INFO | "GET /menu/?categorie=10 HTTP/1.1" 200 16019
+[2025-04-24 22:17:20,081] INFO | Début de requête: {"method": "GET", "path": "/menu/", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:17:20,186] INFO | Fin de requête: {"status_code": 200, "duration": "0.1050 secondes", "method": "GET", "path": "/menu/", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:17:20,187] INFO | "GET /menu/?categorie=8 HTTP/1.1" 200 84463
+[2025-04-24 22:17:35,028] INFO | Début de requête: {"method": "GET", "path": "/reservations/reserver/", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:17:35,058] INFO | Fin de requête: {"status_code": 200, "duration": "0.0300 secondes", "method": "GET", "path": "/reservations/reserver/", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:17:35,059] INFO | "GET /reservations/reserver/ HTTP/1.1" 200 6644
+[2025-04-24 22:17:51,529] INFO | Début de requête: {"method": "GET", "path": "/reservations/reserver/", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:17:51,533] INFO | Fin de requête: {"status_code": 200, "duration": "0.0041 secondes", "method": "GET", "path": "/reservations/reserver/", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:17:51,534] INFO | "GET /reservations/reserver/ HTTP/1.1" 200 6644
+[2025-04-24 22:17:51,565] INFO | Début de requête: {"method": "GET", "path": "/reservations/reserver/", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:17:51,570] INFO | Fin de requête: {"status_code": 200, "duration": "0.0060 secondes", "method": "GET", "path": "/reservations/reserver/", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:17:51,571] INFO | "GET /reservations/reserver/ HTTP/1.1" 200 6644
+[2025-04-24 22:17:52,031] INFO | Début de requête: {"method": "GET", "path": "/menu/", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:17:52,201] INFO | Fin de requête: {"status_code": 200, "duration": "0.1700 secondes", "method": "GET", "path": "/menu/", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:17:52,202] INFO | "GET /menu/ HTTP/1.1" 200 168075
+[2025-04-24 22:17:52,865] INFO | Début de requête: {"method": "GET", "path": "/contact/", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:17:52,872] INFO | Fin de requête: {"status_code": 200, "duration": "0.0070 secondes", "method": "GET", "path": "/contact/", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:17:52,872] INFO | "GET /contact/ HTTP/1.1" 200 4458
+[2025-04-24 22:18:12,774] INFO | Début de requête: {"method": "GET", "path": "/menu/promotions/", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:18:12,781] INFO | Fin de requête: {"status_code": 200, "duration": "0.0070 secondes", "method": "GET", "path": "/menu/promotions/", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:18:12,782] INFO | "GET /menu/promotions/ HTTP/1.1" 200 5971
+[2025-04-24 22:19:59,790] INFO | Début de requête: {"method": "GET", "path": "/compte/connexion/", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:19:59,808] INFO | Fin de requête: {"status_code": 200, "duration": "0.0180 secondes", "method": "GET", "path": "/compte/connexion/", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:19:59,809] INFO | "GET /compte/connexion/ HTTP/1.1" 200 3943
+[2025-04-24 22:20:09,321] INFO | Début de requête: {"method": "POST", "path": "/compte/connexion/", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:20:10,346] INFO | Fin de requête: {"status_code": 302, "duration": "1.0250 secondes", "method": "POST", "path": "/compte/connexion/", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:20:10,353] INFO | "POST /compte/connexion/ HTTP/1.1" 302 0
+[2025-04-24 22:20:10,362] INFO | Début de requête: {"method": "GET", "path": "/compte/profil/", "user": "leiwei", "ip_address": "127.0.0.1"}
+[2025-04-24 22:20:10,368] INFO | Fin de requête: {"status_code": 200, "duration": "0.0110 secondes", "method": "GET", "path": "/compte/profil/", "user": "leiwei", "ip_address": "127.0.0.1"}
+[2025-04-24 22:20:10,369] INFO | "GET /compte/profil/ HTTP/1.1" 200 4122
+[2025-04-24 22:20:13,837] INFO | Début de requête: {"method": "GET", "path": "/admin-panel/", "user": "leiwei", "ip_address": "127.0.0.1"}
+[2025-04-24 22:20:13,950] INFO | Fin de requête: {"status_code": 200, "duration": "0.1170 secondes", "method": "GET", "path": "/admin-panel/", "user": "leiwei", "ip_address": "127.0.0.1"}
+[2025-04-24 22:20:13,951] INFO | "GET /admin-panel/ HTTP/1.1" 200 88097
+[2025-04-24 22:20:15,092] INFO | Début de requête: {"method": "GET", "path": "/reservations/mes/", "user": "leiwei", "ip_address": "127.0.0.1"}
+[2025-04-24 22:20:15,099] INFO | Fin de requête: {"status_code": 200, "duration": "0.0120 secondes", "method": "GET", "path": "/reservations/mes/", "user": "leiwei", "ip_address": "127.0.0.1"}
+[2025-04-24 22:20:15,100] INFO | "GET /reservations/mes/ HTTP/1.1" 200 5107
+[2025-04-24 22:20:41,636] INFO | Début de requête: {"method": "GET", "path": "/admin-panel/", "user": "leiwei", "ip_address": "127.0.0.1"}
+[2025-04-24 22:20:41,778] INFO | Fin de requête: {"status_code": 200, "duration": "0.1480 secondes", "method": "GET", "path": "/admin-panel/", "user": "leiwei", "ip_address": "127.0.0.1"}
+[2025-04-24 22:20:41,780] INFO | "GET /admin-panel/ HTTP/1.1" 200 88097
+[2025-04-24 22:22:34,051] INFO | Début de requête: {"method": "GET", "path": "/admin-panel/categories/", "user": "leiwei", "ip_address": "127.0.0.1"}
+[2025-04-24 22:22:34,057] INFO | Fin de requête: {"status_code": 200, "duration": "0.0120 secondes", "method": "GET", "path": "/admin-panel/categories/", "user": "leiwei", "ip_address": "127.0.0.1"}
+[2025-04-24 22:22:34,059] INFO | "GET /admin-panel/categories/ HTTP/1.1" 200 5868
+[2025-04-24 22:22:35,651] INFO | Début de requête: {"method": "GET", "path": "/admin-panel/", "user": "leiwei", "ip_address": "127.0.0.1"}
+[2025-04-24 22:22:35,812] INFO | Fin de requête: {"status_code": 200, "duration": "0.1655 secondes", "method": "GET", "path": "/admin-panel/", "user": "leiwei", "ip_address": "127.0.0.1"}
+[2025-04-24 22:22:35,813] INFO | "GET /admin-panel/ HTTP/1.1" 200 88097
+[2025-04-24 22:22:36,809] INFO | Début de requête: {"method": "GET", "path": "/admin-panel/users/", "user": "leiwei", "ip_address": "127.0.0.1"}
+[2025-04-24 22:22:36,821] INFO | Fin de requête: {"status_code": 200, "duration": "0.0170 secondes", "method": "GET", "path": "/admin-panel/users/", "user": "leiwei", "ip_address": "127.0.0.1"}
+[2025-04-24 22:22:36,823] INFO | "GET /admin-panel/users/ HTTP/1.1" 200 5677
+[2025-04-24 22:22:38,646] INFO | Début de requête: {"method": "GET", "path": "/admin-panel/", "user": "leiwei", "ip_address": "127.0.0.1"}
+[2025-04-24 22:22:38,797] INFO | Fin de requête: {"status_code": 200, "duration": "0.1570 secondes", "method": "GET", "path": "/admin-panel/", "user": "leiwei", "ip_address": "127.0.0.1"}
+[2025-04-24 22:22:38,798] INFO | "GET /admin-panel/ HTTP/1.1" 200 88097
+[2025-04-24 22:22:43,196] INFO | Début de requête: {"method": "GET", "path": "/admin-panel/ingredients/", "user": "leiwei", "ip_address": "127.0.0.1"}
+[2025-04-24 22:22:43,211] INFO | Fin de requête: {"status_code": 200, "duration": "0.0190 secondes", "method": "GET", "path": "/admin-panel/ingredients/", "user": "leiwei", "ip_address": "127.0.0.1"}
+[2025-04-24 22:22:43,213] INFO | "GET /admin-panel/ingredients/ HTTP/1.1" 200 14642
+[2025-04-24 22:22:47,580] INFO | Début de requête: {"method": "GET", "path": "/admin-panel/horaires/", "user": "leiwei", "ip_address": "127.0.0.1"}
+[2025-04-24 22:22:47,586] INFO | Fin de requête: {"status_code": 200, "duration": "0.0130 secondes", "method": "GET", "path": "/admin-panel/horaires/", "user": "leiwei", "ip_address": "127.0.0.1"}
+[2025-04-24 22:22:47,587] INFO | "GET /admin-panel/horaires/ HTTP/1.1" 200 4609
+[2025-04-24 22:25:51,394] INFO | Début de requête: {"method": "GET", "path": "/admin-panel/", "user": "leiwei", "ip_address": "127.0.0.1"}
+[2025-04-24 22:25:51,520] INFO | Fin de requête: {"status_code": 200, "duration": "0.1330 secondes", "method": "GET", "path": "/admin-panel/", "user": "leiwei", "ip_address": "127.0.0.1"}
+[2025-04-24 22:25:51,521] INFO | "GET /admin-panel/ HTTP/1.1" 200 88097
+[2025-04-24 22:27:36,307] INFO | Début de requête: {"method": "GET", "path": "/reservations/mes/", "user": "leiwei", "ip_address": "127.0.0.1"}
+[2025-04-24 22:27:36,312] INFO | Fin de requête: {"status_code": 200, "duration": "0.0120 secondes", "method": "GET", "path": "/reservations/mes/", "user": "leiwei", "ip_address": "127.0.0.1"}
+[2025-04-24 22:27:36,312] INFO | "GET /reservations/mes/ HTTP/1.1" 200 5107
+[2025-04-24 22:27:37,914] INFO | Début de requête: {"method": "GET", "path": "/admin-panel/", "user": "leiwei", "ip_address": "127.0.0.1"}
+[2025-04-24 22:27:38,054] INFO | Fin de requête: {"status_code": 200, "duration": "0.1450 secondes", "method": "GET", "path": "/admin-panel/", "user": "leiwei", "ip_address": "127.0.0.1"}
+[2025-04-24 22:27:38,055] INFO | "GET /admin-panel/ HTTP/1.1" 200 88097
+[2025-04-24 22:27:52,772] INFO | Début de requête: {"method": "GET", "path": "/admin-panel/users/", "user": "leiwei", "ip_address": "127.0.0.1"}
+[2025-04-24 22:27:52,786] INFO | Fin de requête: {"status_code": 200, "duration": "0.0210 secondes", "method": "GET", "path": "/admin-panel/users/", "user": "leiwei", "ip_address": "127.0.0.1"}
+[2025-04-24 22:27:52,790] INFO | - Broken pipe from ('127.0.0.1', 59275)
+[2025-04-24 22:27:52,811] INFO | Début de requête: {"method": "GET", "path": "/admin-panel/users/", "user": "leiwei", "ip_address": "127.0.0.1"}
+[2025-04-24 22:27:52,826] INFO | Fin de requête: {"status_code": 200, "duration": "0.0180 secondes", "method": "GET", "path": "/admin-panel/users/", "user": "leiwei", "ip_address": "127.0.0.1"}
+[2025-04-24 22:27:52,826] INFO | "GET /admin-panel/users/ HTTP/1.1" 200 5677
+[2025-04-24 22:28:01,619] INFO | Début de requête: {"method": "GET", "path": "/admin-panel/", "user": "leiwei", "ip_address": "127.0.0.1"}
+[2025-04-24 22:28:01,734] INFO | Fin de requête: {"status_code": 200, "duration": "0.1200 secondes", "method": "GET", "path": "/admin-panel/", "user": "leiwei", "ip_address": "127.0.0.1"}
+[2025-04-24 22:28:01,735] INFO | "GET /admin-panel/ HTTP/1.1" 200 88097
+[2025-04-24 22:28:03,676] INFO | Début de requête: {"method": "GET", "path": "/admin-panel/horaires/", "user": "leiwei", "ip_address": "127.0.0.1"}
+[2025-04-24 22:28:03,679] INFO | Fin de requête: {"status_code": 200, "duration": "0.0090 secondes", "method": "GET", "path": "/admin-panel/horaires/", "user": "leiwei", "ip_address": "127.0.0.1"}
+[2025-04-24 22:28:03,681] INFO | "GET /admin-panel/horaires/ HTTP/1.1" 200 4609
+[2025-04-24 22:28:13,530] INFO | Début de requête: {"method": "GET", "path": "/admin-panel/", "user": "leiwei", "ip_address": "127.0.0.1"}
+[2025-04-24 22:28:13,642] INFO | Fin de requête: {"status_code": 200, "duration": "0.1170 secondes", "method": "GET", "path": "/admin-panel/", "user": "leiwei", "ip_address": "127.0.0.1"}
+[2025-04-24 22:28:13,643] INFO | "GET /admin-panel/ HTTP/1.1" 200 88097
+[2025-04-24 22:28:14,777] INFO | Début de requête: {"method": "GET", "path": "/admin-panel/categories/", "user": "leiwei", "ip_address": "127.0.0.1"}
+[2025-04-24 22:28:14,780] INFO | Fin de requête: {"status_code": 200, "duration": "0.0080 secondes", "method": "GET", "path": "/admin-panel/categories/", "user": "leiwei", "ip_address": "127.0.0.1"}
+[2025-04-24 22:28:14,781] INFO | "GET /admin-panel/categories/ HTTP/1.1" 200 5868
+[2025-04-24 22:28:22,731] INFO | Début de requête: {"method": "GET", "path": "/admin-panel/", "user": "leiwei", "ip_address": "127.0.0.1"}
+[2025-04-24 22:28:22,853] INFO | Fin de requête: {"status_code": 200, "duration": "0.1286 secondes", "method": "GET", "path": "/admin-panel/", "user": "leiwei", "ip_address": "127.0.0.1"}
+[2025-04-24 22:28:22,854] INFO | "GET /admin-panel/ HTTP/1.1" 200 88097
+[2025-04-24 22:28:24,582] INFO | Début de requête: {"method": "GET", "path": "/admin-panel/ingredients/", "user": "leiwei", "ip_address": "127.0.0.1"}
+[2025-04-24 22:28:24,591] INFO | Fin de requête: {"status_code": 200, "duration": "0.0140 secondes", "method": "GET", "path": "/admin-panel/ingredients/", "user": "leiwei", "ip_address": "127.0.0.1"}
+[2025-04-24 22:28:24,592] INFO | "GET /admin-panel/ingredients/ HTTP/1.1" 200 14642
+[2025-04-24 22:30:29,715] INFO | Début de requête: {"method": "GET", "path": "/compte/profil/", "user": "leiwei", "ip_address": "127.0.0.1"}
+[2025-04-24 22:30:29,717] INFO | Fin de requête: {"status_code": 200, "duration": "0.0080 secondes", "method": "GET", "path": "/compte/profil/", "user": "leiwei", "ip_address": "127.0.0.1"}
+[2025-04-24 22:30:29,718] INFO | "GET /compte/profil/ HTTP/1.1" 200 4122
+[2025-04-24 22:30:40,640] INFO | Début de requête: {"method": "GET", "path": "/admin-panel/", "user": "leiwei", "ip_address": "127.0.0.1"}
+[2025-04-24 22:30:40,683] INFO | Début de requête: {"method": "GET", "path": "/admin-panel/", "user": "leiwei", "ip_address": "127.0.0.1"}
+[2025-04-24 22:30:40,854] INFO | Fin de requête: {"status_code": 200, "duration": "0.2200 secondes", "method": "GET", "path": "/admin-panel/", "user": "leiwei", "ip_address": "127.0.0.1"}
+[2025-04-24 22:30:40,857] INFO | - Broken pipe from ('127.0.0.1', 59354)
+[2025-04-24 22:30:40,867] INFO | Fin de requête: {"status_code": 200, "duration": "0.1960 secondes", "method": "GET", "path": "/admin-panel/", "user": "leiwei", "ip_address": "127.0.0.1"}
+[2025-04-24 22:30:40,869] INFO | "GET /admin-panel/ HTTP/1.1" 200 88097
+[2025-04-24 22:30:43,174] INFO | Début de requête: {"method": "GET", "path": "/admin-panel/users/", "user": "leiwei", "ip_address": "127.0.0.1"}
+[2025-04-24 22:30:43,186] INFO | Fin de requête: {"status_code": 200, "duration": "0.0180 secondes", "method": "GET", "path": "/admin-panel/users/", "user": "leiwei", "ip_address": "127.0.0.1"}
+[2025-04-24 22:30:43,187] INFO | "GET /admin-panel/users/ HTTP/1.1" 200 5677
+[2025-04-24 22:30:46,235] INFO | Début de requête: {"method": "POST", "path": "/compte/deconnexion/", "user": "leiwei", "ip_address": "127.0.0.1"}
+[2025-04-24 22:30:46,247] INFO | Fin de requête: {"status_code": 302, "duration": "0.0160 secondes", "method": "POST", "path": "/compte/deconnexion/", "user": "leiwei", "ip_address": "127.0.0.1"}
+[2025-04-24 22:30:46,248] INFO | "POST /compte/deconnexion/ HTTP/1.1" 302 0
+[2025-04-24 22:30:46,252] INFO | Début de requête: {"method": "GET", "path": "/compte/connexion/", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:30:46,259] INFO | Fin de requête: {"status_code": 200, "duration": "0.0060 secondes", "method": "GET", "path": "/compte/connexion/", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:30:46,260] INFO | "GET /compte/connexion/ HTTP/1.1" 200 3943
+[2025-04-24 22:30:53,174] INFO | Début de requête: {"method": "POST", "path": "/compte/connexion/", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:30:54,171] INFO | Fin de requête: {"status_code": 200, "duration": "0.9962 secondes", "method": "POST", "path": "/compte/connexion/", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:30:54,171] INFO | "POST /compte/connexion/ HTTP/1.1" 200 4178
+[2025-04-24 22:30:59,955] INFO | Début de requête: {"method": "POST", "path": "/compte/connexion/", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:31:00,975] INFO | Fin de requête: {"status_code": 302, "duration": "1.0196 secondes", "method": "POST", "path": "/compte/connexion/", "user": "AnonymousUser", "ip_address": "127.0.0.1"}
+[2025-04-24 22:31:00,981] INFO | "POST /compte/connexion/ HTTP/1.1" 302 0
+[2025-04-24 22:31:00,989] INFO | Début de requête: {"method": "GET", "path": "/compte/profil/", "user": "Laurent", "ip_address": "127.0.0.1"}
+[2025-04-24 22:31:00,991] INFO | Fin de requête: {"status_code": 200, "duration": "0.0050 secondes", "method": "GET", "path": "/compte/profil/", "user": "Laurent", "ip_address": "127.0.0.1"}
+[2025-04-24 22:31:00,992] INFO | "GET /compte/profil/ HTTP/1.1" 200 3948

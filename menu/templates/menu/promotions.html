@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}Promotions{% endblock %}
+{% block content %}
+<h2 class="mb-4 text-center">🎁 Menus Promotionnels -20%</h2>
+
+<div class="row">
+  {% for menu in menus %}
+    <div class="col-md-6 col-lg-4 mb-4">
+      <div class="card shadow h-100">
+        {% if menu.plat_principal.image %}
+          <img src="{{ menu.plat_principal.image.url }}" class="card-img-top" alt="{{ menu.plat_principal.nom }}">
+        {% endif %}
+        <div class="card-body">
+          <h5 class="card-title">{{ menu.nom }}</h5>
+          <p class="card-text">
+            🍱 <strong>{{ menu.plat_principal.nom }}</strong> + 🍽️ <strong>{{ menu.plat_associe.nom }}</strong>
+          </p>
+          <p class="text-muted small">
+            {{ menu.plat_principal.description|truncatewords:12 }}<br>
+            {{ menu.plat_associe.description|truncatewords:12 }}
+          </p>
+          <p class="fw-bold text-success">💰 Prix promo : {{ menu.prix_total }} €</p>
+        </div>
+      </div>
+    </div>
+  {% empty %}
+    <p>Aucun menu promotionnel pour le moment.</p>
+  {% endfor %}
+</div>
+{% endblock %}

@@ -30,3 +30,10 @@ def menu_view(request):
         'recherche': recherche,
         'tri_prix': tri_prix,
     })
+
+
+from .models import MenuPromotionnel
+
+def promotions_view(request):
+    menus = MenuPromotionnel.objects.select_related('plat_principal', 'plat_associe')
+    return render(request, 'menu/promotions.html', {'menus': menus})

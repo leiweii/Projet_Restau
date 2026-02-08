@@ -60,10 +60,12 @@ def dashboard_home(request):
         )
 
     plats = Plat.objects.select_related('categorie').all()
+    menus = MenuPromotionnel.objects.all()
 
     return render(request, 'core/dashboard.html', {
         'reservations': reservations,
         'plats': plats,
+        'menus': menus,
         'search': search,
     })
 
@@ -267,3 +269,19 @@ def ingredient_delete(request, pk):
     return render(request, 'core/ingredient_delete.html', {'ingredient': ingredient})
 
 
+
+from menu.models import MenuPromotionnel
+from menu.forms import MenuPromoForm
+
+@user_passes_test(admin_required)
+def menu_promo_list(request):
+    menus = MenuPromotionnel.objects.all()
+    return render(request, 'core/menu_promo_list.html', {'menus': menus})
+
+@user_passes_test(admin_required)
+def menu_promo_create(request):
+    form = MenuPromoForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        return redirect('menu_promo_list')
+    return render(request, 'core/menu_promo_form.html', {'form': form, 'title': 'Créer un menu promo'})
