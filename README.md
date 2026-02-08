@@ -309,33 +309,12 @@ Possible :
 
 # 🖥 Technologies
 
-* Python 3
-* Django 4/5
+* Python
+* Django
 * SQLite
 * Bootstrap
 * HTML CSS JS
 
----
-
-# 🧪 Tests recommandés
-
-* création réservation
-* suppression
-* menu promo prix
-* horaires spéciaux
-* login/logout
-
----
-
-# 🔮 Améliorations futures
-
-* paiement Stripe
-* QR code menu
-* statistiques ventes
-* API mobile
-* Docker
-
----
 
 # 👨‍💻 Auteur
 
