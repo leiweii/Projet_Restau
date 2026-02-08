@@ -341,23 +341,6 @@ Possible :
 
 Leiwei SHI
 
----
-
-# ⭐ Conseils pro
-
-Ne jamais coder tout d’un coup.
-
-Ordre conseillé :
-
-1. modèles
-2. vues
-3. templates
-4. tests
-5. admin panel
-6. UX
-
----
-
 # 📌 Commandes utiles
 
 ```bash
