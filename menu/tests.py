@@ -1,7 +1,8 @@
 from django.test import TestCase
+from django.db import IntegrityError, transaction
 from django.contrib.auth.models import User
 from django.urls import reverse
-from .models import Categorie
+from .models import Categorie, MenuPromotionnel
 
 class CategorieTests(TestCase):
     def setUp(self):
@@ -35,3 +36,36 @@ class MenuTests(TestCase):
         plat.ingredients.add(self.ingredient)
         self.assertEqual(plat.nom, "Sushi saumon")
         self.assertIn(self.ingredient, plat.ingredients.all())
+
+
+class MenuPromotionnelConstraintTests(TestCase):
+    def setUp(self):
+        self.categorie = Categorie.objects.create(nom="Menus")
+        self.plat_principal = Plat.objects.create(
+            nom="Sushi",
+            prix="12.00",
+            categorie=self.categorie,
+        )
+        self.plat_associe = Plat.objects.create(
+            nom="Soupe",
+            prix="4.00",
+            categorie=self.categorie,
+        )
+
+    def menu_data(self):
+        return {
+            "nom": "Menu Osaka",
+            "plat_principal": self.plat_principal,
+            "plat_associe": self.plat_associe,
+        }
+
+    def test_nom_unique_metadata_is_boolean_true(self):
+        field = MenuPromotionnel._meta.get_field("nom")
+        self.assertIs(field.unique, True)
+
+    def test_duplicate_nom_is_rejected_by_database(self):
+        MenuPromotionnel.objects.create(**self.menu_data())
+
+        with self.assertRaises(IntegrityError):
+            with transaction.atomic():
+                MenuPromotionnel.objects.create(**self.menu_data())
