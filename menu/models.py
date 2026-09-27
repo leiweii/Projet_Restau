@@ -32,7 +32,7 @@ class Plat(models.Model):
 from decimal import Decimal
 
 class MenuPromotionnel(models.Model):
-    nom = models.CharField(max_length=100, unique= 'true')
+    nom = models.CharField(max_length=100, unique=True)
     plat_principal = models.ForeignKey(Plat, related_name='menus_principal', on_delete=models.CASCADE)
     plat_associe = models.ForeignKey(Plat, related_name='menus_associes', on_delete=models.CASCADE)
 

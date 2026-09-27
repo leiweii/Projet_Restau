@@ -1,330 +1,116 @@
-# 🍣 Osaka — Application Web de Réservation Restaurant (Django)
+# Restaurant Osaka
 
-Application web complète développée avec **Django** permettant à un restaurant japonais de :
+Application Django de présentation et de réservation pour un restaurant japonais. Le projet conserve une architecture monolithique simple : les comptes, le menu, les réservations et l'administration métier sont séparés en applications Django.
 
-* gérer les réservations en ligne
-* afficher le menu
-* proposer des menus promotionnels
-* administrer le site via un dashboard personnalisé
-* gérer horaires spéciaux et jours fériés
+## État actuel
 
-Projet pédagogique mais structuré comme un vrai projet pro.
+Fonctionnalités déjà présentes :
 
----
+- menu public avec catégories, plats, ingrédients, recherche et filtre de prix ;
+- menus promotionnels composés de deux plats ;
+- réservation avec ou sans compte ;
+- espace client pour consulter, modifier et supprimer ses réservations ;
+- inscription, connexion, profil et réinitialisation du mot de passe ;
+- tableau de bord réservé au personnel pour gérer réservations, plats, catégories, ingrédients, utilisateurs, promotions et horaires spéciaux ;
+- configuration distincte pour le développement et la production.
 
-# 🚀 Fonctionnalités principales
+Travail prévu dans les prochaines phases : règles complètes d'horaires hebdomadaires, créneaux de 30 minutes, capacité simultanée, lien sécurisé pour les réservations invitées, délai de modification et nouvelle interface responsive. Ces éléments ne doivent pas être considérés comme terminés.
 
-## 👤 Clients
+## Architecture
 
-* Réserver une table **avec ou sans compte**
-* Créer un compte / se connecter
-* Mot de passe oublié
-* Voir :
-
-  * historique des réservations
-  * modifier / supprimer réservation
-* Consulter :
-
-  * menu du restaurant
-  * promotions
-  * horaires
-  * page contact + Google Maps
-
----
-
-## 🍱 Menu du restaurant
-
-* Catégories :
-
-  * Entrées
-  * Plats
-  * Desserts
-  * Boissons
-* Recherche de plats
-* Filtre par prix
-* 4 plats par ligne
-* Ingrédients affichés
-* Images des plats
-
----
-
-## 🎁 Menus promotionnels (-20%)
-
-Le restaurant peut créer :
-
-* Menu Entrée + Plat
-* Menu Plat + Dessert
-
-Avec :
-
-* nom du menu
-* composition
-* prix calculé automatiquement (-20%)
-
-Page publique :
-
-```
-/promotions/
+```text
+accounts/              comptes et profils
+core/                  accueil, contact et tableau de bord métier
+menu/                  catégories, plats, ingrédients et promotions
+reservations/          réservations et horaires spéciaux
+restaurant_project/    URLs et réglages Django
+  settings/
+    base.py             réglages communs
+    development.py      développement local
+    production.py       production sécurisée
+templates/              gabarits HTML
+static/                 CSS, JavaScript et images statiques
+media/                  images ajoutées par l'administration
 ```
 
----
+Le projet utilise Django 5, SQLite en local, Bootstrap 5 et django-crispy-forms. Il ne contient ni API séparée ni frontend React.
 
-## 🛠 Dashboard Admin personnalisé (sans Django Admin)
+## Installation locale
 
-Accessible :
+Prérequis : Python 3.11 ou version compatible avec les dépendances du fichier `requirements.txt`.
 
-```
-/admin-panel/
-```
-
-Permet de gérer :
-
-* réservations
-* plats
-* catégories
-* ingrédients
-* menus promotionnels
-* horaires spéciaux
-
-CRUD complet :
-
-* créer
-* modifier
-* supprimer
-
-Accès réservé aux `is_staff=True`.
-
----
-
-# 🗄 Structure base de données
-
-## Utilisateur
-
-```
-User
- └── Profile (1-1)
- └── Reservation (1-N)
-```
-
-## Menu
-
-```
-Categorie
- └── Plat
-      └── Ingredient (N-N)
-```
-
-## Promotions
-
-```
-MenuPromotionnel
- ├── plat_principal
- └── plat_associe
-```
-
-## Horaires spéciaux
-
-```
-HoraireSpecial
-- date
-- ferme
-- ouverture
-- fermeture
-- description
-```
-
----
-
-# ⚙️ Installation
-
-## 1️⃣ Cloner le projet
-
-```bash
-git clone https://github.com/leiweii/Projet_Restau.git
-```
-
-## 2️⃣ Environnement virtuel
-
-```bash
+```powershell
 python -m venv env
-source venv/bin/activate
-```
-
-Windows :
-
-```bash
-venv\Scripts\activate
-```
-
-## 3️⃣ Installer dépendances
-
-```bash
-pip install django pillow
-```
-
----
-
-## 4️⃣ Migration DB
-
-```bash
-python manage.py makemigrations
+env\Scripts\Activate.ps1
+python -m pip install -r requirements.txt
 python manage.py migrate
-```
-
----
-
-## 5️⃣ Créer superuser
-
-```bash
 python manage.py createsuperuser
-```
-
-Puis dans shell :
-
-```python
-from django.contrib.auth.models import User
-u = User.objects.get(username="admin")
-u.is_staff = True
-u.save()
-```
-
----
-
-## 6️⃣ Lancer serveur
-
-```bash
 python manage.py runserver
 ```
 
-Site :
+Sous macOS ou Linux, l'activation se fait avec `source env/bin/activate`.
 
-```
-http://127.0.0.1:8000
-```
+Le site est ensuite disponible sur `http://127.0.0.1:8000/`. En développement, les emails sont affichés dans le terminal et aucun identifiant SMTP n'est nécessaire.
 
----
+`manage.py` sélectionne automatiquement `restaurant_project.settings.development`. Pour choisir explicitement un autre module :
 
-# 📁 Structure projet
-
-```
-osaka/
-│
-├── accounts/
-├── menu/
-├── reservations/
-├── core/
-│
-├── templates/
-├── static/
-├── media/
-└── manage.py
+```powershell
+$env:DJANGO_SETTINGS_MODULE = "restaurant_project.settings.production"
 ```
 
----
+## Configuration de production
 
-# 📄 Pages du site
+Copier `.env.example` vers un fichier local `.env`, remplacer toutes les valeurs d'exemple, puis injecter ces variables dans l'environnement d'exécution. Django ne charge pas automatiquement le fichier `.env` : l'hébergeur, Docker ou un gestionnaire de secrets doit le faire.
 
-| URL           | Description |
-| ------------- | ----------- |
-| /             | Accueil     |
-| /menu/        | Menu        |
-| /promotions/  | Menus promo |
-| /reservation/ | Réserver    |
-| /contact/     | Contact     |
-| /login/       | Connexion   |
-| /profile/     | Profil      |
-| /admin-panel/ | Dashboard   |
+Variables obligatoires :
 
----
+- `DJANGO_SECRET_KEY` : secret long, aléatoire et propre à la production ;
+- `DJANGO_ALLOWED_HOSTS` : noms de domaine séparés par des virgules ;
+- `EMAIL_HOST_USER` et `EMAIL_HOST_PASSWORD` : compte SMTP ;
+- `PATRON_EMAIL` : destinataire des notifications ;
+- `DEFAULT_FROM_EMAIL` : expéditeur visible.
 
-# 🧪 Tests shell
+`EMAIL_HOST`, `EMAIL_PORT` et `EMAIL_USE_TLS` disposent de valeurs par défaut modifiables. Les réglages de production activent HTTPS forcé, cookies sécurisés, HSTS et `DEBUG=False`.
 
-```bash
-python manage.py shell
-```
+> Important : un ancien mot de passe d'application Gmail a déjà été conservé dans l'historique du projet. Il faut le révoquer dans le compte Google concerné et en créer un nouveau uniquement dans le gestionnaire de secrets de production. Le retirer du code actuel ne le retire pas de l'historique Git.
 
-Créer plats :
+Avant un déploiement :
 
-```python
-from menu.models import Plat
-Plat.objects.create(nom="Sushi", prix=10)
-```
-
-Créer menu promo :
-
-```python
-from menu.models import MenuPromotionnel
-MenuPromotionnel.objects.create(...)
-```
-
-Tester prix :
-
-```python
-menu.prix_total()
-```
-
----
-
-# 🔐 Sécurité
-
-* Login requis pour profil
-* Admin staff uniquement
-* CSRF activé
-* Validation formulaire
-
----
-
-# 🌍 Multilingue
-
-Support :
-
-* Français
-* Anglais
-* Chinois
-
-Utilisation :
-
-```
-django i18n
-```
-
----
-
-# 📧 Notifications
-
-Possible :
-
-* email confirmation réservation
-* reset password
-
----
-
-### Réservation
-
-* vérifie horaires
-* vérifie jours fermés
-* vérifie capacité
-
----
-
-# 🖥 Technologies
-
-* Python
-* Django
-* SQLite
-* Bootstrap
-* HTML CSS JS
-
-
-# 👨‍💻 Auteur
-
-Leiwei SHI
-
-# 📌 Commandes utiles
-
-```bash
-python manage.py shell
-python manage.py makemigrations
+```powershell
+$env:DJANGO_SETTINGS_MODULE = "restaurant_project.settings.production"
+python manage.py check --deploy
 python manage.py migrate
-python manage.py runserver
+python manage.py collectstatic
 ```
+
+## URLs principales
+
+| URL | Fonction |
+| --- | --- |
+| `/` | accueil |
+| `/menu/` | menu |
+| `/menu/promotions/` | promotions |
+| `/reservations/reserver/` | nouvelle réservation |
+| `/reservations/mes/` | réservations du client connecté |
+| `/compte/connexion/` | connexion |
+| `/compte/profil/` | profil |
+| `/contact/` | contact |
+| `/admin-panel/` | tableau de bord du personnel |
+| `/admin/` | administration Django |
+
+## Qualité et vérifications
+
+```powershell
+python manage.py check
+python manage.py makemigrations --check --dry-run
+python manage.py test
+```
+
+Les fichiers locaux sensibles ou générés (`.env`, base SQLite, journaux, couverture, sauvegardes et environnement virtuel) sont ignorés par Git.
+
+## Documentation du projet
+
+- la conception cible se trouve dans `docs/superpowers/specs/2026-09-27-restaurant-osaka-design.md` ;
+- les plans d'implémentation se trouvent dans `docs/superpowers/plans/`.
+
+Auteur initial : Leiwei SHI.
