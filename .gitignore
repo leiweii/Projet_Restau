@@ -17,3 +17,6 @@ db.sqlite3
 
 # Worktrees locaux Codex
 .worktrees/
+
+# Espace de travail temporaire Superpowers
+.superpowers/
