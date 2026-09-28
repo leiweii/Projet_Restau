@@ -12,7 +12,11 @@ from django.http import JsonResponse
 
 from .services.availability import generate_available_slots
 from .services.booking import create_reservation
-from .services.lifecycle import cancel_reservation, update_reservation
+from .services.lifecycle import (
+    can_customer_manage,
+    cancel_reservation,
+    update_reservation,
+)
 
 
 def reserver_view(request):
@@ -120,7 +124,16 @@ def availability_view(request):
 @login_required
 def mes_reservations_view(request):
     reservations = Reservation.objects.filter(user=request.user).order_by('-date')
-    return render(request, 'reservations/mes_reservations.html', {'reservations': reservations})
+    manageable_ids = {
+        reservation.pk
+        for reservation in reservations
+        if can_customer_manage(reservation)
+    }
+    return render(
+        request,
+        'reservations/mes_reservations.html',
+        {'reservations': reservations, 'manageable_ids': manageable_ids},
+    )
 
 
 
@@ -164,7 +177,10 @@ def guest_reservation_view(request, token):
     return render(
         request,
         "reservations/guest_management.html",
-        {"reservation": reservation},
+        {
+            "reservation": reservation,
+            "can_manage": can_customer_manage(reservation),
+        },
     )
 
 

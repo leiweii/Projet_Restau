@@ -12,9 +12,11 @@
       <p class="mb-2">{{ reservation.date|date:"d/m/Y" }} à {{ reservation.heure|time:"H:i" }}</p>
       <p class="mb-2">{{ reservation.nombre_personnes }} personne{{ reservation.nombre_personnes|pluralize }}</p>
       <p class="mb-4">Statut : <strong>{{ reservation.get_status_display }}</strong></p>
-      {% if reservation.status == 'confirmed' %}
+      {% if can_manage %}
         <a class="btn btn-primary" href="{% url 'guest_modify_reservation' reservation.management_token %}">Modifier</a>
         <a class="btn btn-outline-danger" href="{% url 'guest_cancel_reservation' reservation.management_token %}">Annuler</a>
+      {% elif reservation.status == 'confirmed' %}
+        <p class="text-muted mb-0">Le délai de modification ou d’annulation en ligne est dépassé. Contactez directement le restaurant si nécessaire.</p>
       {% endif %}
     </div>
   </div>

@@ -16,16 +16,24 @@ def _aware_arrival(reservation):
 
 
 def _validate_customer_action(reservation, now):
-    if reservation.status != Reservation.Status.CONFIRMED:
-        raise ValidationError("Cette réservation ne peut plus être modifiée.")
-    config = RestaurantSettings.load()
-    if now + timedelta(hours=config.modification_cutoff_hours) > _aware_arrival(
-        reservation
-    ):
+    if not can_customer_manage(reservation, now=now):
+        config = RestaurantSettings.load()
+        if reservation.status != Reservation.Status.CONFIRMED:
+            raise ValidationError("Cette réservation ne peut plus être modifiée.")
         raise ValidationError(
             f"La modification ou l'annulation doit être effectuée au moins "
             f"{config.modification_cutoff_hours} heures avant l'arrivée."
         )
+
+
+def can_customer_manage(reservation, *, now=None):
+    if reservation.status != Reservation.Status.CONFIRMED:
+        return False
+    now = now or timezone.now()
+    config = RestaurantSettings.load()
+    return now + timedelta(
+        hours=config.modification_cutoff_hours
+    ) <= _aware_arrival(reservation)
 
 
 def _lock_days(*days):

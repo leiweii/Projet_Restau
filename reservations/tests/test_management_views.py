@@ -33,6 +33,17 @@ class GuestReservationManagementTests(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, "Invité")
 
+    def test_past_reservation_does_not_offer_actions(self):
+        self.reservation.date = date(2020, 12, 23)
+        self.reservation.save(update_fields=["date"])
+
+        response = self.client.get(
+            reverse("guest_reservation", args=[self.reservation.management_token])
+        )
+
+        self.assertNotContains(response, ">Modifier<")
+        self.assertNotContains(response, ">Annuler<")
+
     def test_unknown_token_returns_not_found(self):
         response = self.client.get(reverse("guest_reservation", args=[uuid4()]))
 

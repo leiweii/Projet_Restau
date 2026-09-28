@@ -16,7 +16,7 @@
     <span class="badge {% if r.status == 'confirmed' %}text-bg-success{% elif r.status == 'cancelled' %}text-bg-secondary{% else %}text-bg-info{% endif %}">
       {{ r.get_status_display }}
     </span>
-    {% if r.status == 'confirmed' %}
+    {% if r.pk in manageable_ids %}
     <br />
     <a
       href="{% url 'modifier_reservation' r.id %}"
