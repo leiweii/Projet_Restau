@@ -14,6 +14,7 @@ INSTALLED_APPS = [
     "reservations",
     "menu",
     "core",
+    "restaurant.apps.RestaurantConfig",
     "crispy_forms",
     "crispy_bootstrap5",
 ]
