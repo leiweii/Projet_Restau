@@ -15,6 +15,13 @@ class Reservation(models.Model):
 
     def __str__(self):
         return f"{self.nom} - {self.date} à {self.heure} ({self.nombre_personnes} pers.)"
+
+
+class ReservationDayLock(models.Model):
+    date = models.DateField(unique=True)
+
+    def __str__(self):
+        return f"Verrou de réservation du {self.date}"
     
 
 # class Commande(models.Model):

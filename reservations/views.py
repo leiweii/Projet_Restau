@@ -2,31 +2,30 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from .forms import ReservationForm
 from .models import Reservation
-from restaurant.models import SpecialOpeningHours
 from django.contrib import messages
 from django.core.mail import send_mail
 from datetime import date
 from django.conf import settings
 from django.shortcuts import get_object_or_404
+from django.core.exceptions import ValidationError
+from django.http import JsonResponse
+
+from .services.availability import generate_available_slots
+from .services.booking import create_reservation
 
 
 def reserver_view(request):
     if request.method == 'POST':
         form = ReservationForm(request.POST)
         if form.is_valid():
-            date_reservation = form.cleaned_data['date']
-
-            # 🔒 Vérifie fermeture exceptionnelle
-            special = SpecialOpeningHours.objects.filter(date=date_reservation).first()
-            if special and special.closed:
-                messages.error(request, "⚠️ Le restaurant est exceptionnellement fermé à cette date.")
+            try:
+                reservation = create_reservation(
+                    form.cleaned_data,
+                    user=request.user,
+                )
+            except ValidationError as error:
+                form.add_error(None, error)
                 return render(request, 'reservations/reserver.html', {'form': form})
-
-            # 💾 Création réservation
-            reservation = form.save(commit=False)
-            if request.user.is_authenticated:
-                reservation.user = request.user
-            reservation.save()
 
             # ✅ Email de confirmation client
             objet = "Confirmation de votre réservation"
@@ -82,6 +81,22 @@ Nouvelle réservation enregistrée :
         form = ReservationForm(initial=initial)
 
     return render(request, 'reservations/reserver.html', {'form': form})
+
+
+def availability_view(request):
+    try:
+        day = date.fromisoformat(request.GET.get("date", ""))
+        party_size = int(request.GET.get("personnes", ""))
+        slots = generate_available_slots(day, party_size)
+    except (TypeError, ValueError, ValidationError) as error:
+        message = error.messages[0] if isinstance(error, ValidationError) else (
+            "Indiquez une date et un nombre de personnes valides."
+        )
+        return JsonResponse({"error": message}, status=400)
+
+    return JsonResponse(
+        {"slots": [slot.strftime("%H:%M") for slot in slots]}
+    )
 
 
 

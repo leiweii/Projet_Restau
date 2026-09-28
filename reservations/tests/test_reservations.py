@@ -3,6 +3,7 @@ from django.test import TestCase
 from django.urls import reverse
 
 from reservations.models import Reservation
+from restaurant.models import WeeklyOpeningHours
 
 
 class ReservationTests(TestCase):
@@ -12,6 +13,11 @@ class ReservationTests(TestCase):
             password="test123",
         )
         self.client.login(username="client", password="test123")
+        WeeklyOpeningHours.objects.create(
+            weekday=WeeklyOpeningHours.TUESDAY,
+            opens_at="19:00",
+            closes_at="22:30",
+        )
 
     def test_creer_reservation(self):
         response = self.client.post(
