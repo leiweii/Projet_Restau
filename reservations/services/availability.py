@@ -59,7 +59,10 @@ def is_slot_available(
     duration = timedelta(minutes=config.reservation_duration_minutes)
     candidate_end = candidate_start + duration
 
-    reservations = Reservation.objects.filter(date=day)
+    reservations = Reservation.objects.filter(
+        date=day,
+        status__in=(Reservation.Status.CONFIRMED, Reservation.Status.SEATED),
+    )
     if exclude_reservation is not None and exclude_reservation.pk:
         reservations = reservations.exclude(pk=exclude_reservation.pk)
 

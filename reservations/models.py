@@ -1,8 +1,17 @@
+import uuid
+
 from django.db import models
 from django.contrib.auth.models import User
 from menu.models import Plat
 
 class Reservation(models.Model):
+    class Status(models.TextChoices):
+        CONFIRMED = "confirmed", "Confirmée"
+        CANCELLED = "cancelled", "Annulée"
+        SEATED = "seated", "Installée"
+        COMPLETED = "completed", "Terminée"
+        NO_SHOW = "no_show", "Non présentée"
+
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
     nom = models.CharField(max_length=100)
     email = models.EmailField()
@@ -11,7 +20,14 @@ class Reservation(models.Model):
     heure = models.TimeField()
     nombre_personnes = models.PositiveIntegerField()
     commentaire = models.TextField(blank=True, null=True)
+    status = models.CharField(
+        max_length=12,
+        choices=Status.choices,
+        default=Status.CONFIRMED,
+    )
+    management_token = models.UUIDField(default=uuid.uuid4, unique=True, editable=False)
     date_creation = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return f"{self.nom} - {self.date} à {self.heure} ({self.nombre_personnes} pers.)"
