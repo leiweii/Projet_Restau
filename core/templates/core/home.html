@@ -1,204 +1,92 @@
-{% extends 'base.html' %} {% load static %} 
-{% block title %}Accueil{% endblock %} {% block content %}
+{% extends 'base.html' %}
+{% load static %}
 
-<!-- Hero Section - Carousel -->
-<div id="carouselHero" class="carousel slide mb-4" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img
-        src="{% static 'img/sushi.jpeg' %}"
-        class="d-block w-100"
-        alt="Sushi"
-      />
-      <div
-        class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded"
-      >
-        <h5>Sushi frais préparé à la commande</h5>
-        <p>Tradition japonaise et ingrédients de qualité</p>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <img
-        src="{% static 'img/Ramen.jpg' %}"
-        class="d-block w-100"
-        alt="Ramen"
-      />
-      <div
-        class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded"
-      >
-        <h5>Ramen fait maison</h5>
-        <p>Un bol de chaleur et de réconfort</p>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <img
-        src="{% static 'img/c.jpg' %}"
-        class="d-block w-100"
-        alt="Tempura"
-      />
-      <div
-        class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded"
-      >
-        <h5>Tempura croustillant</h5>
-        <p>Friture légère à la japonaise</p>
-      </div>
-    </div>
-  </div>
-  <button
-    class="carousel-control-prev"
-    type="button"
-    data-bs-target="#carouselHero"
-    data-bs-slide="prev"
-  >
-    <span class="carousel-control-prev-icon"></span>
-  </button>
-  <button
-    class="carousel-control-next"
-    type="button"
-    data-bs-target="#carouselHero"
-    data-bs-slide="next"
-  >
-    <span class="carousel-control-next-icon"></span>
-  </button>
-</div>
+{% block title %}{{ restaurant.name }} — Cuisine japonaise{% endblock %}
 
-<!-- Présentation du restaurant -->
-<section class="mb-5 text-center">
-  <h2>Bienvenue chez Osaka</h2>
-  <p class="lead">
-    Depuis 2016, nous vous proposons une cuisine japonaise authentique, dans une
-    ambiance chaleureuse et moderne.
-  </p>
-</section>
-
-<!-- Réserver -->
-<div class="text-center mb-4">
-  <a href="{% url 'reserver' %}" class="btn btn-primary btn-lg"
-    >🍣 Réserver une table</a
-  >
-</div>
-
-<!-- Offre spéciale 1 - image à gauche -->
-<section class="row mb-5">
-    <div class="col-md-6">
-      <a href="{% static 'img/menu.jpg' %}" target="_blank">
-        <img
-          src="{% static 'img/menu.jpg' %}"
-          alt="Plat du jour"
-          class="img-fluid rounded shadow"
-        />
-      </a>
-    </div>
-    <div class="col-md-6 d-flex flex-column justify-content-center">
-      <h3>Offre spéciale</h3>
-      <p class="lead">
-        Découvrez notre menu composé— seulement ce mois-ci !
-      </p>
-    </div>
-  </section>
-
-<!-- Offre spéciale 2 - image à droite -->
-  <section class="row mb-5">
-    <div class="col-md-6 d-flex flex-column justify-content-center">
-      <h3>Menu sashimi assortis 🍱 20.90 € </h3>
-      <p class="lead">
-        Un menu fondant et savoureux, parfait pour les amateurs de saumon et de fromage ! 🧀🐟
-      </p>
-    </div>
-    <div class="col-md-6">
-      <a href="{% static 'img/Saumon.png' %}" target="_blank">
-        <img
-          src="{% static 'img/Saumon.png' %}"
-          alt="Menu Bento"
-          class="img-fluid rounded shadow"
-        />
-      </a>
-    </div>
-  </section>
-
-  <!-- Offre spéciale 3 - image à gauche -->
-<section class="row mb-5">
-  <div class="col-md-6">
-    <a href="{% static 'img/1.png' %}" target="_blank">
-      <img
-        src="{% static 'img/1.png' %}"
-        alt="Plat du jour"
-        class="img-fluid rounded shadow"
-      />
-    </a>
-  </div>
-  <div class="col-md-6 d-flex flex-column justify-content-center">
-    <h3>Offre spéciale 🍣 18.90 €</h3>
-    <p class="lead">
-      Un équilibre parfait entre grillades savoureuses et fraîcheur du poisson cru. Idéal pour les amateurs de cuisine japonaise variée !
+{% block content %}
+<section class="row align-items-center g-4 py-4 py-lg-5">
+  <div class="col-lg-6">
+    <p class="text-uppercase text-danger fw-semibold mb-2">Cuisine japonaise à Créteil</p>
+    <h1 class="display-4 fw-bold">{{ restaurant.name }}</h1>
+    <p class="lead text-secondary">
+      Découvrez notre carte et réservez votre table en quelques étapes.
     </p>
+    <div class="d-flex flex-wrap gap-2 mt-4">
+      <a href="{% url 'reserver' %}" class="btn btn-primary btn-lg">Réserver une table</a>
+      <a href="{% url 'menu' %}" class="btn btn-outline-dark btn-lg">Voir la carte</a>
+    </div>
+  </div>
+  <div class="col-lg-6">
+    <img
+      src="{% static 'img/sushi.jpeg' %}"
+      class="img-fluid rounded-4 shadow"
+      alt="Assortiment de cuisine japonaise"
+    />
   </div>
 </section>
 
-<!-- Offre spéciale 4 - image à droite -->
-<section class="row mb-5">
-    <div class="col-md-6 d-flex flex-column justify-content-center">
-      <h3>Menu bateau spécial 🍱 53.90 € </h3>
-      <p class="lead">
-        Bento complet avec riz, poisson grillé, légumes et soupe miso — disponible tous les midis !
-      </p>
+<section class="card border-0 bg-dark text-white p-4 mb-5">
+  <div class="row align-items-center g-3">
+    <div class="col-md-7">
+      <p class="text-uppercase small mb-1">Aujourd’hui</p>
+      <h2 class="h4 mb-0">{{ today_summary }}</h2>
     </div>
-    <div class="col-md-6">
-      <a href="{% static 'img/bateau.jpg' %}" target="_blank">
-        <img
-          src="{% static 'img/bateau.jpg' %}"
-          alt="Menu Bento"
-          class="img-fluid rounded shadow"
-        />
-      </a>
+    <div class="col-md-5 text-md-end">
+      <a href="{% url 'contact' %}" class="btn btn-outline-light">Horaires et accès</a>
     </div>
-  </section>
-
-  <!-- Offre spéciale 5 - image à droite -->
-  <section class="row mb-5">
-    <div class="col-md-6">
-      <a href="{% static 'img/magi.jpg' %}" target="_blank">
-        <img
-          src="{% static 'img/magi.jpg' %}"
-          alt="Plat du jour"
-          class="img-fluid rounded shadow"
-        />
-      </a>
-    </div>
-    <div class="col-md-6 d-flex flex-column justify-content-center">
-      <h3>Menu maki sushi sashimi 🍣 16.90 € </h3>
-      <p class="lead">
-        Découvrez notre ramen au miso et porc grillé — seulement cette semaine !
-      </p>
-    </div>
-  </section>
-    
-
-
-<!-- Horaires et adresse (mini) -->
-<section class="mb-5 bg-light p-4 rounded shadow-sm">
-  <h4>📍 Osaka – 1 Rue Claude Vasconi, 94000 Créteil</h4>
-  <p>🕒 Ouvert tous les jours de 12h à 22h</p>
-  <a href="{% url 'contact' %}" class="btn btn-outline-secondary"
-    >Voir la page Contact</a
-  >
+  </div>
 </section>
 
-<!-- Réseaux sociaux -->
-<section class="text-center mb-5">
-  <h4>📷 Suivez-nous sur Instagram</h4>
-  <a
-    href="https://www.instagram.com/toncompte/"
-    target="_blank"
-    class="btn btn-outline-dark m-2"
-    >Instagram</a
-  >
-  <a
-    href="https://www.facebook.com/toncompte/"
-    target="_blank"
-    class="btn btn-outline-dark m-2"
-    >Facebook</a
-  >
+{% if featured_dishes %}
+<section class="mb-5" aria-labelledby="featured-title">
+  <div class="d-flex justify-content-between align-items-end mb-3">
+    <div>
+      <p class="text-uppercase text-danger fw-semibold mb-1">Notre sélection</p>
+      <h2 id="featured-title" class="mb-0">Quelques plats de la carte</h2>
+    </div>
+    <a href="{% url 'menu' %}" class="link-dark">Toute la carte</a>
+  </div>
+  <div class="row g-4">
+    {% for dish in featured_dishes %}
+    <article class="col-md-4">
+      <div class="card h-100 border-0">
+        <div class="card-body">
+          <div class="d-flex justify-content-between gap-3">
+            <h3 class="h5 card-title">{{ dish.nom }}</h3>
+            <strong>{{ dish.prix }} €</strong>
+          </div>
+          {% if dish.description %}<p class="card-text text-secondary">{{ dish.description }}</p>{% endif %}
+        </div>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
 </section>
+{% endif %}
 
+<section class="row g-4 mb-5">
+  <div class="col-lg-7">
+    <div class="bg-white rounded-4 shadow-sm p-4 h-100">
+      <p class="text-uppercase text-danger fw-semibold mb-1">Nous trouver</p>
+      <h2 class="h3">{{ restaurant.name }}</h2>
+      {% if restaurant.address %}
+      <address class="mb-3">
+        {{ restaurant.address }}<br />
+        {{ restaurant.postal_code }} {{ restaurant.city }}
+      </address>
+      {% else %}
+      <p class="text-secondary">Les coordonnées seront bientôt disponibles.</p>
+      {% endif %}
+      <a href="{% url 'contact' %}" class="btn btn-outline-dark">Informations pratiques</a>
+    </div>
+  </div>
+  <div class="col-lg-5">
+    <div class="bg-danger-subtle rounded-4 p-4 h-100">
+      <p class="text-uppercase text-danger fw-semibold mb-1">Votre table</p>
+      <h2 class="h3">Prêt à réserver ?</h2>
+      <p>Choisissez votre date, le nombre de personnes et un horaire disponible.</p>
+      <a href="{% url 'reserver' %}" class="btn btn-primary">Commencer</a>
+    </div>
+  </div>
+</section>
 {% endblock %}

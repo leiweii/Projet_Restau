@@ -2,7 +2,8 @@ from datetime import date
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import user_passes_test
 from reservations.models import Reservation
-from restaurant.models import SpecialOpeningHours
+from restaurant.models import RestaurantSettings, SpecialOpeningHours
+from restaurant.services import get_opening_summary, get_weekly_schedule
 from menu.models import Plat, Categorie, Ingredient
 from django.db.models import Q
 from reservations.forms import ReservationForm
@@ -15,31 +16,30 @@ from accounts.forms import UserProfileUpdateForm
 
 def contact_view(request):
     today = date.today()
-    fermeture_message = None
-
-    special = SpecialOpeningHours.objects.filter(date=today).first()
-    if special and special.closed:
-        fermeture_message = f"⚠️ Le restaurant est exceptionnellement fermé aujourd’hui ({today.strftime('%d/%m/%Y')})."
-
-    horaires = {
-        'Lundi': '12h00 - 14h30 / 19h00 - 22h30',
-        'Mardi': '12h00 - 14h30 / 19h00 - 22h30',
-        'Mercredi': '12h00 - 14h30 / 19h00 - 22h30',
-        'Jeudi': '12h00 - 14h30 / 19h00 - 22h30',
-        'Vendredi': '12h00 - 14h30 / 19h00 - 22h30',
-        'Samedi': ' ----------/ 19h00 - 22h30',
-        'Dimanche': '-------- / 19h00 - 22h30',
-    }
-
-    return render(request, 'core/contact.html', {
-        'fermeture_message': fermeture_message,
-        'horaires': horaires
-    })
+    restaurant = RestaurantSettings.load()
+    return render(
+        request,
+        'core/contact.html',
+        {
+            'restaurant': restaurant,
+            'today_summary': get_opening_summary(today),
+            'weekly_schedule': get_weekly_schedule(),
+        },
+    )
 
 
 
 def home_view(request):
-    return render(request, 'core/home.html')
+    today = date.today()
+    return render(
+        request,
+        'core/home.html',
+        {
+            'restaurant': RestaurantSettings.load(),
+            'today_summary': get_opening_summary(today),
+            'featured_dishes': Plat.objects.filter(disponible=True)[:3],
+        },
+    )
 
 
 
