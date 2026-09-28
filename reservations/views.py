@@ -3,9 +3,7 @@ from django.contrib.auth.decorators import login_required
 from .forms import ReservationForm
 from .models import Reservation
 from django.contrib import messages
-from django.core.mail import send_mail
 from datetime import date
-from django.conf import settings
 from django.shortcuts import get_object_or_404
 from django.core.exceptions import ValidationError
 from django.http import JsonResponse
@@ -17,6 +15,7 @@ from .services.lifecycle import (
     cancel_reservation,
     update_reservation,
 )
+from .services.notifications import send_reservation_notifications
 
 
 def reserver_view(request):
@@ -32,44 +31,7 @@ def reserver_view(request):
                 form.add_error(None, error)
                 return render(request, 'reservations/reserver.html', {'form': form})
 
-            # ✅ Email de confirmation client
-            objet = "Confirmation de votre réservation"
-            message = f"""
-Bonjour {reservation.nom},
-
-Votre réservation a bien été enregistrée pour le {reservation.date.strftime('%d/%m/%Y')} à {reservation.heure}.
-Nombre de personnes : {reservation.nombre_personnes}
-
-Merci et à bientôt !
-
-– Restaurant OSAKA
-"""
-            send_mail(
-                objet,
-                message,
-                settings.DEFAULT_FROM_EMAIL,
-                [reservation.email],
-                fail_silently=False,
-            )
-
-            # 📩 Email au patron
-            message_pour_patron = f"""
-Nouvelle réservation enregistrée :
-
-👤 Nom : {reservation.nom}
-📅 Date : {reservation.date.strftime('%d/%m/%Y')}
-🕒 Heure : {reservation.heure}
-👥 Nombre de personnes : {reservation.nombre_personnes}
-📞 Téléphone : {reservation.telephone}
-📧 Email : {reservation.email}
-"""
-            send_mail(
-                "📌 Nouvelle réservation – OSAKA",
-                message_pour_patron,
-                settings.DEFAULT_FROM_EMAIL,
-                [settings.PATRON_EMAIL],
-                fail_silently=False,
-            )
+            send_reservation_notifications(reservation, request)
 
             messages.success(request, "Votre réservation a bien été enregistrée ✅")
             return render(request, 'reservations/confirmation.html', {'reservation': reservation})
