@@ -7,6 +7,7 @@ from restaurant.services import get_opening_summary, get_weekly_schedule
 from menu.models import Plat, Categorie, Ingredient
 from django.db.models import Q
 from reservations.forms import ReservationForm
+from reservations.services.lifecycle import cancel_reservation
 from menu.forms import PlatForm, CategorieForm, IngredientForm
 from restaurant.forms import SpecialOpeningHoursForm
 from django.contrib.auth.models import User
@@ -89,7 +90,7 @@ def reservation_edit(request, pk):
 def reservation_delete(request, pk):
     reservation = get_object_or_404(Reservation, pk=pk)
     if request.method == 'POST':
-        reservation.delete()
+        cancel_reservation(reservation, staff_override=True)
         return redirect('dashboard')
     return render(request, 'core/reservation_delete.html', {'reservation': reservation})
 

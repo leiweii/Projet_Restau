@@ -13,6 +13,11 @@
     📅 <strong>{{ r.date }}</strong> à <strong>{{ r.heure }}</strong> – {{ r.nombre_personnes }} personnes <br />
     ☎️ {{ r.telephone }} – ✉️ {{ r.email}}
     <br />
+    <span class="badge {% if r.status == 'confirmed' %}text-bg-success{% elif r.status == 'cancelled' %}text-bg-secondary{% else %}text-bg-info{% endif %}">
+      {{ r.get_status_display }}
+    </span>
+    {% if r.status == 'confirmed' %}
+    <br />
     <a
       href="{% url 'modifier_reservation' r.id %}"
       class="btn btn-sm btn-warning mt-2"
@@ -23,6 +28,7 @@
       class="btn btn-sm btn-danger mt-2"
       >Annuler</a
     >
+    {% endif %}
   </li>
   {% empty %}
   <li class="list-group-item">Aucune réservation trouvée.</li>

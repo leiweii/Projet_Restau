@@ -12,6 +12,7 @@ from django.http import JsonResponse
 
 from .services.availability import generate_available_slots
 from .services.booking import create_reservation
+from .services.lifecycle import cancel_reservation, update_reservation
 
 
 def reserver_view(request):
@@ -130,9 +131,13 @@ def modifier_reservation_view(request, pk):
     if request.method == 'POST':
         form = ReservationForm(request.POST, instance=reservation)
         if form.is_valid():
-            form.save()
-            messages.success(request, "Réservation modifiée avec succès.")
-            return redirect('mes_reservations')
+            try:
+                update_reservation(reservation, form.cleaned_data)
+            except ValidationError as error:
+                form.add_error(None, error)
+            else:
+                messages.success(request, "Réservation modifiée avec succès.")
+                return redirect('mes_reservations')
     else:
         form = ReservationForm(instance=reservation)
 
@@ -143,8 +148,59 @@ def supprimer_reservation_view(request, pk):
     reservation = get_object_or_404(Reservation, pk=pk, user=request.user)
 
     if request.method == 'POST':
-        reservation.delete()
-        messages.success(request, "Réservation annulée.")
-        return redirect('mes_reservations')
+        try:
+            cancel_reservation(reservation)
+        except ValidationError as error:
+            messages.error(request, error.messages[0])
+        else:
+            messages.success(request, "Réservation annulée.")
+            return redirect('mes_reservations')
 
     return render(request, 'reservations/confirmer_suppression.html', {'reservation': reservation})
+
+
+def guest_reservation_view(request, token):
+    reservation = get_object_or_404(Reservation, management_token=token)
+    return render(
+        request,
+        "reservations/guest_management.html",
+        {"reservation": reservation},
+    )
+
+
+def guest_modify_reservation_view(request, token):
+    reservation = get_object_or_404(Reservation, management_token=token)
+    if request.method == "POST":
+        form = ReservationForm(request.POST, instance=reservation)
+        if form.is_valid():
+            try:
+                update_reservation(reservation, form.cleaned_data)
+            except ValidationError as error:
+                form.add_error(None, error)
+            else:
+                messages.success(request, "Réservation modifiée avec succès.")
+                return redirect("guest_reservation", token=token)
+    else:
+        form = ReservationForm(instance=reservation)
+    return render(
+        request,
+        "reservations/guest_modify.html",
+        {"form": form, "reservation": reservation},
+    )
+
+
+def guest_cancel_reservation_view(request, token):
+    reservation = get_object_or_404(Reservation, management_token=token)
+    if request.method == "POST":
+        try:
+            cancel_reservation(reservation)
+        except ValidationError as error:
+            messages.error(request, error.messages[0])
+        else:
+            messages.success(request, "Réservation annulée.")
+        return redirect("guest_reservation", token=token)
+    return render(
+        request,
+        "reservations/guest_cancel.html",
+        {"reservation": reservation},
+    )

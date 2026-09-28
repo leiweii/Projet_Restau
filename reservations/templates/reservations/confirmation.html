@@ -5,5 +5,9 @@
 <p>Date : {{ reservation.date }}</p>
 <p>Heure : {{ reservation.heure }}</p>
 <p>Nombre de personnes : {{ reservation.nombre_personnes }}</p>
+<p>
+  Conservez ce lien privé pour modifier ou annuler votre réservation :
+  <a href="{% url 'guest_reservation' reservation.management_token %}">Gérer ma réservation</a>
+</p>
 <a href="/">Retour à l'accueil</a>
 {% endblock %}

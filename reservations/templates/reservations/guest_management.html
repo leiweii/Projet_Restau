@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}Gérer ma réservation{% endblock %}
+{% block content %}
+<section class="container py-5" style="max-width: 760px">
+  <h1 class="h2 mb-4">Votre réservation</h1>
+  {% if messages %}{% for message in messages %}
+    <div class="alert {% if message.tags == 'error' %}alert-danger{% else %}alert-success{% endif %}">{{ message }}</div>
+  {% endfor %}{% endif %}
+  <div class="card shadow-sm border-0">
+    <div class="card-body p-4">
+      <p class="mb-2"><strong>{{ reservation.nom }}</strong></p>
+      <p class="mb-2">{{ reservation.date|date:"d/m/Y" }} à {{ reservation.heure|time:"H:i" }}</p>
+      <p class="mb-2">{{ reservation.nombre_personnes }} personne{{ reservation.nombre_personnes|pluralize }}</p>
+      <p class="mb-4">Statut : <strong>{{ reservation.get_status_display }}</strong></p>
+      {% if reservation.status == 'confirmed' %}
+        <a class="btn btn-primary" href="{% url 'guest_modify_reservation' reservation.management_token %}">Modifier</a>
+        <a class="btn btn-outline-danger" href="{% url 'guest_cancel_reservation' reservation.management_token %}">Annuler</a>
+      {% endif %}
+    </div>
+  </div>
+</section>
+{% endblock %}

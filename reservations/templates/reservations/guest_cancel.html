@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}Annuler ma réservation{% endblock %}
+{% block content %}
+<section class="container py-5" style="max-width: 760px">
+  <h1 class="h2 mb-3">Annuler ma réservation</h1>
+  <p>Confirmez l’annulation du {{ reservation.date|date:"d/m/Y" }} à {{ reservation.heure|time:"H:i" }}.</p>
+  <form method="post">
+    {% csrf_token %}
+    <button class="btn btn-danger" type="submit">Confirmer l’annulation</button>
+    <a class="btn btn-link" href="{% url 'guest_reservation' reservation.management_token %}">Retour</a>
+  </form>
+</section>
+{% endblock %}

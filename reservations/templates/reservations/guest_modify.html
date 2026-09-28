@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}Modifier ma réservation{% endblock %}
+{% block content %}
+<section class="container py-5" style="max-width: 760px">
+  <h1 class="h2 mb-4">Modifier ma réservation</h1>
+  <form method="post" class="card card-body shadow-sm border-0">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div>
+      <button class="btn btn-primary" type="submit">Enregistrer</button>
+      <a class="btn btn-link" href="{% url 'guest_reservation' reservation.management_token %}">Retour</a>
+    </div>
+  </form>
+</section>
+{% endblock %}
