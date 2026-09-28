@@ -5,6 +5,7 @@ from django.utils import timezone
 
 from restaurant.models import RestaurantSettings
 from restaurant.services import get_effective_intervals
+from reservations.models import Reservation
 
 
 def _aware_datetime(day, value):
@@ -44,3 +45,47 @@ def generate_candidate_slots(day, party_size, *, now=None):
             current += interval
 
     return slots
+
+
+def is_slot_available(
+    day,
+    start_time,
+    party_size,
+    *,
+    exclude_reservation=None,
+):
+    config = validate_party_size(party_size)
+    candidate_start = _aware_datetime(day, start_time)
+    duration = timedelta(minutes=config.reservation_duration_minutes)
+    candidate_end = candidate_start + duration
+
+    reservations = Reservation.objects.filter(date=day)
+    if exclude_reservation is not None and exclude_reservation.pk:
+        reservations = reservations.exclude(pk=exclude_reservation.pk)
+
+    events = []
+    for reservation in reservations.only("heure", "nombre_personnes"):
+        reservation_start = _aware_datetime(day, reservation.heure)
+        reservation_end = reservation_start + duration
+        if reservation_start < candidate_end and reservation_end > candidate_start:
+            events.append(
+                (max(reservation_start, candidate_start), reservation.nombre_personnes)
+            )
+            events.append(
+                (min(reservation_end, candidate_end), -reservation.nombre_personnes)
+            )
+
+    occupancy = 0
+    for moment in sorted({event_time for event_time, _ in events}):
+        occupancy += sum(delta for event_time, delta in events if event_time == moment)
+        if occupancy + party_size > config.capacity:
+            return False
+    return party_size <= config.capacity
+
+
+def generate_available_slots(day, party_size, *, now=None):
+    return [
+        slot
+        for slot in generate_candidate_slots(day, party_size, now=now)
+        if is_slot_available(day, slot, party_size)
+    ]

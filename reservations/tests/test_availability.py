@@ -9,7 +9,11 @@ from restaurant.models import (
     SpecialOpeningHours,
     WeeklyOpeningHours,
 )
-from reservations.services.availability import generate_candidate_slots
+from reservations.models import Reservation
+from reservations.services.availability import (
+    generate_candidate_slots,
+    is_slot_available,
+)
 
 
 class SlotGenerationTests(TestCase):
@@ -104,3 +108,57 @@ class SlotGenerationTests(TestCase):
                         party_size,
                         now=self.now,
                     )
+
+
+class CapacityTests(TestCase):
+    def setUp(self):
+        self.config = RestaurantSettings.load()
+        self.config.capacity = 20
+        self.config.reservation_duration_minutes = 90
+        self.config.max_online_party_size = 8
+        self.config.save()
+        self.day = date(2030, 12, 23)
+
+    def reserve(self, at, people):
+        return Reservation.objects.create(
+            nom="Client test",
+            email="client@example.com",
+            telephone="0102030405",
+            date=self.day,
+            heure=at,
+            nombre_personnes=people,
+        )
+
+    def test_exact_capacity_is_available(self):
+        self.reserve(time(12, 0), 12)
+
+        self.assertTrue(is_slot_available(self.day, time(13, 0), 8))
+
+    def test_capacity_exceeded_during_overlap_is_unavailable(self):
+        self.reserve(time(12, 0), 12)
+        self.reserve(time(12, 30), 1)
+
+        self.assertFalse(is_slot_available(self.day, time(13, 0), 8))
+
+    def test_reservation_ending_at_candidate_start_does_not_overlap(self):
+        self.reserve(time(11, 30), 20)
+
+        self.assertTrue(is_slot_available(self.day, time(13, 0), 8))
+
+    def test_non_simultaneous_overlaps_are_not_incorrectly_summed(self):
+        self.reserve(time(12, 0), 8)
+        self.reserve(time(14, 0), 8)
+
+        self.assertTrue(is_slot_available(self.day, time(13, 0), 8))
+
+    def test_reservation_can_be_excluded_during_modification(self):
+        current = self.reserve(time(13, 0), 18)
+
+        self.assertTrue(
+            is_slot_available(
+                self.day,
+                time(13, 0),
+                8,
+                exclude_reservation=current,
+            )
+        )
