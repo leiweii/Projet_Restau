@@ -1,12 +1,13 @@
 from datetime import date
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import user_passes_test
-from reservations.models import Reservation, HoraireSpecial
+from reservations.models import Reservation
+from restaurant.models import SpecialOpeningHours
 from menu.models import Plat, Categorie, Ingredient
 from django.db.models import Q
 from reservations.forms import ReservationForm
 from menu.forms import PlatForm, CategorieForm, IngredientForm
-from reservations.forms import HoraireSpecialForm
+from restaurant.forms import SpecialOpeningHoursForm
 from django.contrib.auth.models import User
 from accounts.models import Profile
 from accounts.forms import UserProfileUpdateForm
@@ -16,8 +17,8 @@ def contact_view(request):
     today = date.today()
     fermeture_message = None
 
-    special = HoraireSpecial.objects.filter(date=today).first()
-    if special and special.ferme:
+    special = SpecialOpeningHours.objects.filter(date=today).first()
+    if special and special.closed:
         fermeture_message = f"⚠️ Le restaurant est exceptionnellement fermé aujourd’hui ({today.strftime('%d/%m/%Y')})."
 
     horaires = {
@@ -132,35 +133,35 @@ def plat_create(request):
 # gerer les horaires
 @user_passes_test(admin_required)
 def horaires_list(request):
-    horaires = HoraireSpecial.objects.order_by('date')
+    horaires = SpecialOpeningHours.objects.order_by('date')
     return render(request, 'core/horaires_list.html', {'horaires': horaires})
 
 @user_passes_test(admin_required)
 def horaire_create(request):
     if request.method == 'POST':
-        form = HoraireSpecialForm(request.POST)
+        form = SpecialOpeningHoursForm(request.POST)
         if form.is_valid():
             form.save()
             return redirect('horaires_list')
     else:
-        form = HoraireSpecialForm()
+        form = SpecialOpeningHoursForm()
     return render(request, 'core/horaire_form.html', {'form': form, 'title': 'Ajouter un jour spécial'})
 
 @user_passes_test(admin_required)
 def horaire_edit(request, pk):
-    horaire = get_object_or_404(HoraireSpecial, pk=pk)
+    horaire = get_object_or_404(SpecialOpeningHours, pk=pk)
     if request.method == 'POST':
-        form = HoraireSpecialForm(request.POST, instance=horaire)
+        form = SpecialOpeningHoursForm(request.POST, instance=horaire)
         if form.is_valid():
             form.save()
             return redirect('horaires_list')
     else:
-        form = HoraireSpecialForm(instance=horaire)
+        form = SpecialOpeningHoursForm(instance=horaire)
     return render(request, 'core/horaire_form.html', {'form': form, 'title': 'Modifier le jour'})
 
 @user_passes_test(admin_required)
 def horaire_delete(request, pk):
-    horaire = get_object_or_404(HoraireSpecial, pk=pk)
+    horaire = get_object_or_404(SpecialOpeningHours, pk=pk)
     if request.method == 'POST':
         horaire.delete()
         return redirect('horaires_list')

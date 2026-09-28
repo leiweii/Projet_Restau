@@ -110,3 +110,37 @@ class WeeklyOpeningHours(models.Model):
             f"{self.get_weekday_display()} "
             f"{self.opens_at.strftime('%H:%M')}–{self.closes_at.strftime('%H:%M')}"
         )
+
+
+class SpecialOpeningHours(models.Model):
+    date = models.DateField(unique=True)
+    closed = models.BooleanField(default=True)
+    opens_at = models.TimeField(blank=True, null=True)
+    closes_at = models.TimeField(blank=True, null=True)
+    description = models.CharField(max_length=200, blank=True)
+
+    class Meta:
+        ordering = ("date",)
+        verbose_name = "horaire exceptionnel"
+        verbose_name_plural = "horaires exceptionnels"
+
+    def clean(self):
+        super().clean()
+        errors = {}
+        if self.closed:
+            if self.opens_at or self.closes_at:
+                errors["closed"] = "Une fermeture ne doit pas avoir d'horaires."
+        elif not self.opens_at or not self.closes_at:
+            errors["opens_at"] = "Les heures sont requises pour une ouverture."
+        elif self.closes_at <= self.opens_at:
+            errors["closes_at"] = "La fermeture doit suivre l'ouverture."
+        if errors:
+            raise ValidationError(errors)
+
+    def save(self, *args, **kwargs):
+        self.full_clean()
+        return super().save(*args, **kwargs)
+
+    def __str__(self):
+        state = "Fermé" if self.closed else "Ouvert exceptionnellement"
+        return f"{self.date} – {state}"

@@ -1,5 +1,5 @@
 from django import forms
-from .models import Reservation, HoraireSpecial
+from .models import Reservation
 
 class ReservationForm(forms.ModelForm):
     class Meta:
@@ -20,14 +20,3 @@ class ReservationForm(forms.ModelForm):
 #             'heure_retrait': forms.TimeInput(attrs={'type': 'time'}),
 #             'plats': forms.CheckboxSelectMultiple()
 #         }
-
-
-class HoraireSpecialForm(forms.ModelForm):
-    class Meta:
-        model = HoraireSpecial
-        fields = ['date', 'ferme', 'ouverture', 'fermeture', 'description']
-        widgets = {
-            'date': forms.DateInput(attrs={'type': 'date'}),
-            'ouverture': forms.TimeInput(attrs={'type': 'time'}),
-            'fermeture': forms.TimeInput(attrs={'type': 'time'}),
-        }

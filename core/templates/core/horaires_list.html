@@ -20,9 +20,9 @@
     {% for h in horaires %}
       <tr>
         <td>{{ h.date }}</td>
-        <td>{{ h.ferme|yesno:"✅,❌" }}</td>
-        <td>{{ h.ouverture }}</td>
-        <td>{{ h.fermeture }}</td>
+        <td>{{ h.closed|yesno:"✅,❌" }}</td>
+        <td>{{ h.opens_at }}</td>
+        <td>{{ h.closes_at }}</td>
         <td>{{ h.description }}</td>
         <td>
           <a href="{% url 'horaire_edit' h.pk %}" class="btn btn-sm btn-warning">✏️</a>

@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import RestaurantSettings, WeeklyOpeningHours
+from .models import RestaurantSettings, SpecialOpeningHours, WeeklyOpeningHours
 
 
 @admin.register(RestaurantSettings)
@@ -45,3 +45,10 @@ class WeeklyOpeningHoursAdmin(admin.ModelAdmin):
     list_display = ("weekday", "opens_at", "closes_at")
     list_filter = ("weekday",)
     ordering = ("weekday", "opens_at")
+
+
+@admin.register(SpecialOpeningHours)
+class SpecialOpeningHoursAdmin(admin.ModelAdmin):
+    list_display = ("date", "closed", "opens_at", "closes_at", "description")
+    list_filter = ("closed",)
+    ordering = ("date",)

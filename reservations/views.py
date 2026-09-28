@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from .forms import ReservationForm
-from .models import Reservation, HoraireSpecial
+from .models import Reservation
+from restaurant.models import SpecialOpeningHours
 from django.contrib import messages
 from django.core.mail import send_mail
 from datetime import date
@@ -16,8 +17,8 @@ def reserver_view(request):
             date_reservation = form.cleaned_data['date']
 
             # 🔒 Vérifie fermeture exceptionnelle
-            special = HoraireSpecial.objects.filter(date=date_reservation).first()
-            if special and special.ferme:
+            special = SpecialOpeningHours.objects.filter(date=date_reservation).first()
+            if special and special.closed:
                 messages.error(request, "⚠️ Le restaurant est exceptionnellement fermé à cette date.")
                 return render(request, 'reservations/reserver.html', {'form': form})
 
